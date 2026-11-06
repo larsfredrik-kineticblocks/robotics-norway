@@ -1,0 +1,59 @@
+{
+  "sharedDrive": {
+    "id": "0AOC8ZRNR_c8xUk9PVA",
+    "name": "Robotics Norway",
+    "url": "https://drive.google.com/drive/folders/0AOC8ZRNR_c8xUk9PVA",
+    "membersOnly": true,
+    "note": "The shared Drive folder is limited to named members. It is not public. Each of the four files below is shared so anyone with the link can view it."
+  },
+  "documents": [
+    {
+      "slug": "intensjonsavtale",
+      "name": "Intensjonsavtale Robotics Norway",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "id": "13edIpxXYAicyGpaptHVGgfsiBHZ23Mt3M74Xy0Os4Yg",
+      "link": "https://docs.google.com/document/d/13edIpxXYAicyGpaptHVGgfsiBHZ23Mt3M74Xy0Os4Yg/edit?usp=drivesdk",
+      "lastModified": "2026-10-28T10:19:49.597Z",
+      "publicAnyoneWithLink": true,
+      "extract": "section-b",
+      "translation": "letter-of-intent"
+    },
+    {
+      "slug": "invitation",
+      "name": "Invitation to join Robotics Norway",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "id": "1YVbmSwd8_aP48iCqMFbZM7UGimJyLLYw8EByttx9Ows",
+      "link": "https://docs.google.com/document/d/1YVbmSwd8_aP48iCqMFbZM7UGimJyLLYw8EByttx9Ows/edit?usp=drivesdk",
+      "lastModified": "2026-11-05T08:40:59.514Z",
+      "publicAnyoneWithLink": true,
+      "extract": "invitation",
+      "translation": null
+    },
+    {
+      "slug": "founding-meeting",
+      "name": "Robotics Norway – Founding meeting",
+      "type": "Google Slides",
+      "mimeType": "application/vnd.google-apps.presentation",
+      "id": "1BoWydT1G43L4wQS2qeaiYfdzDn3-miHUkStN-r4nDEs",
+      "link": "https://docs.google.com/presentation/d/1BoWydT1G43L4wQS2qeaiYfdzDn3-miHUkStN-r4nDEs/edit?usp=drivesdk",
+      "lastModified": "2026-11-05T09:16:23.003Z",
+      "publicAnyoneWithLink": true,
+      "extract": "section-a",
+      "translation": null
+    },
+    {
+      "slug": "samarbeidsavtale",
+      "name": "Utkast samarbeidsavtale Robotics Norway",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "id": "1hGT3heVoCOeokTcDykF4dlyZC_anpsFa69YjYqOnCBo",
+      "link": "https://docs.google.com/document/d/1hGT3heVoCOeokTcDykF4dlyZC_anpsFa69YjYqOnCBo/edit?usp=drivesdk",
+      "lastModified": "2026-10-28T10:19:58.814Z",
+      "publicAnyoneWithLink": true,
+      "extract": "section-c",
+      "translation": "cooperation-agreement"
+    }
+  ]
+}

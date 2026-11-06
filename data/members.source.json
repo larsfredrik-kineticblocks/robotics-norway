@@ -1,0 +1,740 @@
+{
+  "gathered_at": "2026-11-06T09:30:00+01:00",
+  "timezone": "Europe/Oslo",
+  "methodology": {
+    "inception_list_source": "Invitation to join Robotics Norway, section 'Who is invited and who has joined' / 'Joining the inception', also repeated on founding-meeting slide 3 and in Shifter 6 Nov 2026 coverage that quoted the invitation list.",
+    "calendar_event": {
+      "title": "Stiftelsesmøte, Norway Robotics, Møterom Hagen 4",
+      "when": "Thursday 5 November 2026, 11:00–12:00 Europe/Oslo",
+      "location": "Startuplab, Gaustadalléen 21, 0349 Oslo, Norway (Møterom Hagen 4)",
+      "meet": "https://meet.google.com/ctc-ktsf-oiz",
+      "organizer": "lars.fredrik@kineticblocks.com",
+      "guest_list_source": "Plain-text guest list in Google Calendar acceptance email from Emil Anker (message 1a1aad28dc1b4da1)."
+    },
+    "attendance_notes_source": "Granola meeting d2eaedd4-c52f-4768-84df-a42040254df9, summary section 'Member Introductions' (who spoke / was introduced). RSVPs from Gmail calendar replies.",
+    "caveats": [
+      "Being on the calendar guest list or the invitation 'joining the inception' list is not the same as having signed the letter of intent. No signed participant appendix was found.",
+      "The invitation lists Cognite among companies that declined membership, but Kristoffer Gjerde of Cognite was on the calendar, accepted, requested Drive access, and was introduced at the meeting.",
+      "Granola listed 'Fisker Robotics (Andreas)' in introductions; that name is not on the calendar guest list or the inception list. Physical Robotics is on the inception list and was named by Shifter as among participants. These may be distinct; Fisker Robotics is marked uncertain.",
+      "3LC: Paul Endresen wrote that 3LC is joining and that Per Arne Jensen would participate; Per Arne later wrote he could not attend and that colleague Thomas Hagen (3LC founder team, Oslo) would attend instead. Calendar guests are paul.endresen@3lc.ai and per.arne.jensen@3lc.ai. Thomas Hagen's email was not captured. Granola introductions attributed 'Thomas, Ludvig via Lito' to 3LC as well as Lito — likely a mix-up with Thomas Soerensen and Ludvig Øvrevik of Lito.",
+      "Company descriptions prefer the company's own website when fetched this turn; otherwise the company's own introduction at the founding meeting (Granola). Fields marked uncertain must not be treated as verified."
+    ]
+  },
+  "administrator_and_contact": {
+    "name": "Lars-Fredrik Forberg",
+    "role": "CEO and co-founder, Kinetic Blocks AS; facilitator of the founding meeting; proposed administrator contact",
+    "email_for_robotics_norway": "lars.fredrik@kineticblocks.com",
+    "email_certainty": "verified",
+    "evidence": [
+      "Invitation document signature block: 'From: Lars-Fredrik Forberg, CEO and co-founder, Kinetic Blocks AS' and 'Contact: Lars-Fredrik Forberg, lars.fredrik@kineticblocks.com'.",
+      "He sends Robotics Norway invitations and calendar events from lars.fredrik@kineticblocks.com (personal Gmail connector).",
+      "Gmail send-as display on that account: signature 'Lars-Fredrik Forberg / Co-founder / +47 97022043 / lars.fredrik@kineticblocks.com'.",
+      "Default sales Gmail connector is sales@kineticblocks.com (display name 'Sales KineticBlocks.com'); that address is used for Kinetic Blocks marketplace mail, not for the Robotics Norway founding correspondence reviewed."
+    ],
+    "other_connected_email": "sales@kineticblocks.com"
+  },
+  "members": [
+    {
+      "website": "https://kineticblocks.com",
+      "website_certainty": "verified",
+      "short_description": "Data marketplace for humanoids and robots (as introduced at the founding meeting). Organisation number 938 345 627. Proposed administrator company for 2027.",
+      "description_source": "Granola founding-meeting introductions; invitation and intensjonsavtale (org.nr.).",
+      "description_certainty": "verified",
+      "contact_person": "Lars-Fredrik Forberg",
+      "contact_email": "lars.fredrik@kineticblocks.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Leo Terry",
+          "email": "leo@kineticblocks.com",
+          "note": "Kinetic Blocks colleague; not the Robotics Norway contact on the invitation."
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "organizer",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Organizer of the 5 Nov meeting.",
+      "company_name": "Kinetic Blocks AS"
+    },
+    {
+      "website": "https://www.startuplab.no",
+      "website_certainty": "verified",
+      "short_description": "Norway’s largest tech incubator, with a hardware, deep tech and defence focus (as introduced at the founding meeting). Host of the founding meeting and the agreed first robot lab in Oslo.",
+      "description_source": "Granola introductions; invitation (first lab at Startuplab).",
+      "description_certainty": "verified",
+      "contact_person": "Kristian Hesthaug",
+      "contact_email": "kristian@startuplab.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Christina Wiig",
+          "email": "christina@startuplab.no",
+          "title": "Head of Corporate Partnerships",
+          "rsvp": "tentatively accepted",
+          "note": "Runs Humanoids at work and follow-up 'Humanoids / robotics Norway -evaluering & next steps'."
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "Kristian accepted; Christina tentatively accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Granola named the introducer as Kristian representing Startuplab.",
+      "company_name": "Startuplab"
+    },
+    {
+      "website": "https://www.sarorobotics.com",
+      "website_certainty": "verified",
+      "short_description": "Builds autonomous climbing robots for inspection of industrial pipe networks, delivering continuous inspection data for energy infrastructure (including corrosion under insulation).",
+      "description_source": "https://www.sarorobotics.com/ fetched 6 Nov 2026. Meeting intro: inspection robots for industry (Ingeborg).",
+      "description_certainty": "verified",
+      "contact_person": "Ingeborg Sofie Bogen",
+      "contact_email": "ingeborg@sarorobotics.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Daniel",
+          "email": "daniel@sarorobotics.com",
+          "note": "Confirmed for the Robotics Norway steering group (Granola next steps)."
+        },
+        {
+          "name": "Kristian",
+          "email": "kristian@sarorobotics.com"
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "Ingeborg accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "",
+      "company_name": "Saro Robotics"
+    },
+    {
+      "website": "https://humanoid.guide",
+      "website_certainty": "uncertain",
+      "short_description": "Introduced at the founding meeting from an investor/founder angle by Christian Rokseth. Invitation lists the company as Humanoid.guide (Stavanger).",
+      "description_source": "Granola introductions; invitation inception list.",
+      "description_certainty": "partial",
+      "contact_person": "Christian Rokseth",
+      "contact_email": "crokseth@gmail.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "No company-domain email found; only gmail. Website hostname inferred from the company name used in the invitation, not independently loaded this turn. Confirmed for the steering group.",
+      "company_name": "Humanoid.guide"
+    },
+    {
+      "website": "https://dotspot.ai",
+      "website_certainty": "verified",
+      "short_description": null,
+      "description_source": "Website hostname taken from contact email marcus.horn@dotspot.ai. Homepage was not fetched this turn, so no public description is invented.",
+      "description_certainty": "unknown",
+      "contact_person": "Marcus Horn",
+      "contact_email": "marcus.horn@dotspot.ai",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": false,
+      "membership_status": "founding_member_listed",
+      "notes": "Accepted the calendar invite. Not named in Granola's introduction round, so in-room speaking/attendance is not independently confirmed beyond RSVP.",
+      "company_name": "Dotspot"
+    },
+    {
+      "website": "https://marseliarobotics.com",
+      "website_certainty": "uncertain",
+      "short_description": "Industrial robots, based in Stavanger (as introduced by Lone). Press coverage describes software that lets an operator instruct a robot arm in ordinary language.",
+      "description_source": "Granola introductions; Finansavisen 13 June 2026 quoted in search results (not re-fetched as primary web page).",
+      "description_certainty": "partial",
+      "contact_person": "Lone",
+      "contact_email": "lone@marseliarobotics.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "no separate RSVP email found; on guest list",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Full name not present in the calendar guest list (only 'Lone'). Website inferred from email domain.",
+      "company_name": "Marselia Robotics"
+    },
+    {
+      "website": "https://runwayfbu.com",
+      "website_certainty": "uncertain",
+      "short_description": "Investment fund for the future of industry including robotics; also runs an AI/robotics hub (as introduced by Hanna and MK). LinkedIn company page describes a tech hub with 60+ companies and an AI and Robotics Lab at Aker Tech House, Fornebu, related to RunwayVC (runway.vc).",
+      "description_source": "Granola introductions; LinkedIn company page snippet in search results.",
+      "description_certainty": "partial",
+      "contact_person": "Hanna Selvaag Wangsmo",
+      "contact_email": "hanna@runwayfbu.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Hanna Selvaag Wangsmo",
+          "email": "hanna@runway.vc",
+          "note": "Same person also accepted from this address."
+        },
+        {
+          "name": "MK",
+          "email": "maria@runwayfbu.com",
+          "rsvp": "accepted"
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "Hanna and MK accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "",
+      "company_name": "Runway FBU"
+    },
+    {
+      "website": "https://3lc.ai",
+      "website_certainty": "verified",
+      "short_description": "3LC (3 Lines of Code) provides data-centric computer-vision workflows, annotation management and quality tooling. Founding-meeting notes also described software for shrimp research/data processing; that phrasing may mix 3LC with Lito and should be treated with care.",
+      "description_source": "https://3lc.ai/ partnership page with Roboxi (search/fetch snippets); email signatures '3LC.ai'.",
+      "description_certainty": "partial",
+      "contact_person": "Per Arne Jensen",
+      "contact_email": "per.arne.jensen@3lc.ai",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Per Arne Jensen",
+          "email": "paj@3lc.ai",
+          "note": "Also used in his own signature, titled Chair / CCO."
+        },
+        {
+          "name": "Paul Endresen",
+          "email": "paul.endresen@3lc.ai",
+          "note": "Wrote that 3LC is joining ('Vi er med som Paul har sagt')."
+        },
+        {
+          "name": "Thomas Hagen",
+          "email": null,
+          "note": "Named by Per Arne as the Oslo founder-team colleague who would attend instead of him. Email not captured."
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "Per Arne accepted, then tentatively accepted, then wrote he could not attend",
+      "introduced_at_meeting": false,
+      "membership_status": "founding_member_listed",
+      "notes": "Membership intent verified by email from Paul and Per Arne. Physical/digital attendance on 5 Nov is uncertain (Thomas Hagen expected).",
+      "company_name": "3LC"
+    },
+    {
+      "website": "https://www.ppm.no",
+      "website_certainty": "uncertain",
+      "short_description": "High-tech robot installations; now robots for nursing homes, based in Trondheim. Mentioned their Nursing Home Lab (NHL) in Trondheim during the meeting.",
+      "description_source": "Granola introductions and robot-lab discussion.",
+      "description_certainty": "partial",
+      "contact_person": "Trygve Thomessen",
+      "contact_email": "trygve.thomessen@ppm.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Website inferred from email domain ppm.no; homepage not fetched this turn.",
+      "company_name": "PPM Robotics"
+    },
+    {
+      "website": "https://lito.so",
+      "website_certainty": "verified",
+      "short_description": "Robotics data lab in Oslo that collects manipulation training data with wireless handheld grippers (stereo video, motion, gripper opening, and planned fingertip touch). Founded by Thomas Sørensen (CEO) and Ludvig Øvrevik (CTO).",
+      "description_source": "https://lito.so/ fetched via search snippets 6 Nov 2026.",
+      "description_certainty": "verified",
+      "contact_person": "Thomas Soerensen",
+      "contact_email": "thomas@lito.so",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Ludvig Ovrevik",
+          "email": "ludvig@lito.so",
+          "rsvp": "accepted"
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "Thomas and Ludvig accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Granola also flagged Lito among companies interested in the Bay Area project.",
+      "company_name": "Lito"
+    },
+    {
+      "website": "https://necia.no",
+      "website_certainty": "verified",
+      "short_description": "Necia Tech Cluster (also spelled Neka in meeting notes) works on Industry 4.0, automation, AI and humanoid robotics in the Moss region, with about 23 member companies. Part of EU project eViva and planning an international Robotics Expo in Moss.",
+      "description_source": "Founding-meeting slides (NECIA · MOSS) and Granola notes; https://necia.no/",
+      "description_certainty": "verified",
+      "contact_person": "Eva Helen Rognskog",
+      "contact_email": "er@necia.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Invitation lists 'Necia (network)'. Eva confirmed for the steering group. Calendar guest listed as er@necia.no.",
+      "company_name": "Necia"
+    },
+    {
+      "website": "https://wybe.me",
+      "website_certainty": "uncertain",
+      "short_description": "Listed in the invitation as Wybe (Agibot). No introduction at the 11:00 founding meeting was recorded, and no Wybe address appears on the calendar guest list.",
+      "description_source": "Invitation inception list only.",
+      "description_certainty": "unknown",
+      "contact_person": "Julian",
+      "contact_email": "julian@wybe.me",
+      "contact_certainty": "uncertain",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": false,
+      "rsvp": null,
+      "introduced_at_meeting": false,
+      "membership_status": "listed_on_invitation_attendance_not_verified",
+      "notes": "julian@wybe.me appears on Christina Wiig's 3 Nov 'Humanoids at work' speaker email, not on the 11:00 Stiftelsesmøte guest list.",
+      "company_name": "Wybe"
+    },
+    {
+      "website": "https://www.hiveautonomy.no",
+      "website_certainty": "verified",
+      "short_description": "Installs a 'silicon brain' on existing industrial machines (wheel loaders, forklifts and similar) so fleets can be supervised remotely and run as a coordinated autonomous system.",
+      "description_source": "https://www.hiveautonomy.no/ fetched 6 Nov 2026. Meeting intro: autonomous drones, building silicon operators (Oskar).",
+      "description_certainty": "verified",
+      "contact_person": "Oskar Mykland",
+      "contact_email": "oskar.mykland@hiveautonomy.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Ronny Azimi Liverød",
+          "email": "ronny.liverod@hiveautonomy.no",
+          "rsvp": "declined (away/vacation)"
+        },
+        {
+          "email": "info@hiveautonomy.no",
+          "note": "Generic address shown on the website."
+        },
+        {
+          "email": "hello@hiveautonomy.com",
+          "note": "Generic address shown on the website."
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "Oskar accepted; Ronny declined",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Also flagged among companies interested in the Bay Area project.",
+      "company_name": "Hive Autonomy"
+    },
+    {
+      "website": "https://www.physicalrobotics.com",
+      "website_certainty": "verified",
+      "short_description": "Norwegian advanced robotics and automation company (Necia member page). Shifter named Physical Robotics among founding-meeting participants.",
+      "description_source": "https://necia.no/news/velkommen-til-vårt-nye-medlem-physical-robotics and Shifter 6 Nov 2026.",
+      "description_certainty": "partial",
+      "contact_person": null,
+      "contact_email": null,
+      "contact_certainty": "unknown",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": false,
+      "rsvp": null,
+      "introduced_at_meeting": false,
+      "membership_status": "listed_on_invitation_contact_unknown",
+      "notes": "No Physical Robotics email was on the calendar guest list. See also uncertain 'Fisker Robotics' entry.",
+      "company_name": "Physical Robotics"
+    },
+    {
+      "website": null,
+      "website_certainty": "unknown",
+      "short_description": "Force control solutions for humanoids (as introduced by Andreas, according to Granola).",
+      "description_source": "Granola founding-meeting introductions only.",
+      "description_certainty": "uncertain",
+      "contact_person": "Andreas",
+      "contact_email": null,
+      "contact_certainty": "unknown",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": false,
+      "rsvp": null,
+      "introduced_at_meeting": true,
+      "membership_status": "uncertain_name_not_on_invitation_or_calendar",
+      "notes": "May be a transcription error or a walk-in not on the formal lists. Do not publish as a verified member without confirmation.",
+      "company_name": "Fisker Robotics"
+    },
+    {
+      "website": "https://roboxi.com",
+      "website_certainty": "uncertain",
+      "short_description": "About 30 employees in Stavanger; builds robots for airport aprons / autonomous runway inspection and maintenance (meeting intro and 3LC partnership page).",
+      "description_source": "Granola introductions; 3LC–Roboxi partnership page snippets.",
+      "description_certainty": "partial",
+      "contact_person": "Magnus Olsen Finnesand",
+      "contact_email": "magnus@roboxi.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Full name from RSVP From header. Website inferred from email domain.",
+      "company_name": "ROBOXI"
+    },
+    {
+      "website": "https://mil-as.no",
+      "website_certainty": "uncertain",
+      "short_description": "Lab in Grimstad working with robotics, AI and additive manufacturing. Invitation notes equipment including Unitree G1, a quadruped, and Boston Dynamics Spot.",
+      "description_source": "Granola introductions; invitation parenthetical.",
+      "description_certainty": "partial",
+      "contact_person": "Jayant Singh",
+      "contact_email": "Jayant@mil-as.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Christian Nordbach",
+          "email": "Christian@mil-as.no",
+          "rsvp": "accepted"
+        },
+        {
+          "name": "Lene Merethe Liodden",
+          "email": "Lene@mil-as.no",
+          "rsvp": "accepted (Godtatt)"
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "Jayant, Christian and Lene accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Invitation spelling: Mechatronics Innovation Labs. Website inferred from mil-as.no.",
+      "company_name": "Mechatronics Innovation Lab"
+    },
+    {
+      "website": "https://sonair.com",
+      "website_certainty": "verified",
+      "short_description": "Makes ADAR One, a safety-certified 3D ultrasonic sensor (SIL 2 / PL d) for detecting people and obstacles around robots.",
+      "description_source": "https://sonair.com/ fetched 6 Nov 2026.",
+      "description_certainty": "verified",
+      "contact_person": "Tor Odland",
+      "contact_email": "tor@sonair.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "email": "hello@sonair.com",
+          "note": "Generic address on the website."
+        }
+      ],
+      "logo_url": "https://cdn.prod.website-files.com/65eeb61f568fba33bac91879/6ab0c7fd24518d9807c552e2_Sonair%20OpenGraph%20-%20Home.png",
+      "logo_certainty": "partial",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted (wrote he would attend in person)",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "logo_url is the homepage Open Graph image, not confirmed as the official square logo file. Signature in email: CMO.",
+      "company_name": "Sonair"
+    },
+    {
+      "website": "https://www.kameleongruppen.no",
+      "website_certainty": "uncertain",
+      "short_description": "Robot installation, design and automation for production lines (as introduced by Lars Kjelling).",
+      "description_source": "Granola introductions. Invitation/slides spell it 'Kamelon Robotics'.",
+      "description_certainty": "partial",
+      "contact_person": "Lars Kjelling",
+      "contact_email": "lars.kjelling@kameleongruppen.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Martin Bredeli",
+          "email": "martin.bredeli@kameleongruppen.no",
+          "note": "CEO Lars Kjelling wrote that Martin would attend in person; Martin accepted the calendar invite."
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "Lars tentative; Martin accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "Lars Kjelling's email signature: CEO / Daglig leder, Kameleon. Official spelling should be Kameleon, not Kamelon.",
+      "company_name": "Kameleon Robotics"
+    },
+    {
+      "website": "https://ruter.no",
+      "website_certainty": "verified",
+      "short_description": "Researching the impact of robotics on public transport (as introduced by Vibeke Harlem).",
+      "description_source": "Granola introductions.",
+      "description_certainty": "partial",
+      "contact_person": "Vibeke Harlem",
+      "contact_email": "vibeke.harlem@ruter.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "",
+      "company_name": "Ruter AS"
+    },
+    {
+      "website": "https://www.oslo.kommune.no/",
+      "website_certainty": "partial",
+      "short_description": "Oslo’s nursing-home agency; introduced interest in nursing-home applications of robotics.",
+      "description_source": "Granola introductions; invitation inception list.",
+      "description_certainty": "partial",
+      "contact_person": "Johnny Advocaat",
+      "contact_email": "johnny.advocaat@sye.oslo.kommune.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": true,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "founding_member_listed",
+      "notes": "",
+      "company_name": "Oslo kommune, Sykehjemsetaten"
+    },
+    {
+      "website": "https://www.cognite.com",
+      "website_certainty": "verified",
+      "short_description": "Industrial AI and data platform; drones and inspection robots as data sources (as introduced by Kristoffer Gjerde).",
+      "description_source": "Granola introductions.",
+      "description_certainty": "partial",
+      "contact_person": "Kristoffer Gjerde",
+      "contact_email": "kristoffer.gjerde@cognite.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "attended_meeting_invitation_says_declined_membership",
+      "notes": "Invitation 'Declined' list includes Cognite. Kristoffer requested access to the Robotics Norway shared disk on 5 Nov 2026 and was granted reader access.",
+      "company_name": "Cognite"
+    },
+    {
+      "website": "https://www.bring.com",
+      "website_certainty": "verified",
+      "short_description": "Interested in robotics and automation (as introduced by Camilla).",
+      "description_source": "Granola introductions.",
+      "description_certainty": "partial",
+      "contact_person": "Camilla De Verdier",
+      "contact_email": "camilla.de.verdier@bring.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": true,
+      "rsvp": "no separate RSVP found",
+      "introduced_at_meeting": true,
+      "membership_status": "meeting_attendee_not_on_inception_list",
+      "notes": "",
+      "company_name": "Posten Bring"
+    },
+    {
+      "website": "https://robotcluster.no",
+      "website_certainty": "uncertain",
+      "short_description": "Industry cluster funded by Innovation Norway, based on Osterøy, bringing together producers, integrators, end users, research, capital and public actors. Admitted to NIC Connect for 2027–2029 according to the founding slides.",
+      "description_source": "Granola notes; founding-meeting slides (NRC · OSTERØY).",
+      "description_certainty": "partial",
+      "contact_person": "Vidar Tufteland",
+      "contact_email": "vidar@robotcluster.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Stig Frode Opsvik",
+          "email": null,
+          "note": "Named in Granola notes alongside Vidar; email not found."
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": true,
+      "rsvp": "no separate RSVP found; Vidar wrote he would attend",
+      "introduced_at_meeting": true,
+      "membership_status": "related_cluster_guest",
+      "notes": "Positioned as complementary, not competing. Website inferred from email domain.",
+      "company_name": "Norwegian Robotics Cluster"
+    },
+    {
+      "website": "https://aimadlab.com",
+      "website_certainty": "uncertain",
+      "short_description": "Lab for megaprojects, virtual rockets and missiles (as introduced by Emil).",
+      "description_source": "Granola introductions.",
+      "description_certainty": "partial",
+      "contact_person": "Emil Anker",
+      "contact_email": "emil@aimadlab.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Emil Anker",
+          "email": "emilanker@icloud.com",
+          "note": "Also on the calendar guest list."
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "meeting_attendee_not_on_inception_list",
+      "notes": "Website inferred from email domain; homepage not fetched.",
+      "company_name": "AimadLab"
+    },
+    {
+      "website": "https://www.innovasjonnorge.no",
+      "website_certainty": "verified",
+      "short_description": "Public funding partner and proposed project manager for the Bay Area project. Guest at the founding meeting, not a listed founding member company.",
+      "description_source": "Founding slides and Granola notes.",
+      "description_certainty": "verified",
+      "contact_person": "Geir Haugum",
+      "contact_email": "geir.haugum@innovationnorway.no",
+      "contact_certainty": "verified",
+      "additional_contacts": [
+        {
+          "name": "Sharon Røe",
+          "email": "sharon.roe@innovationnorway.no",
+          "note": "Innovation Norway San Francisco; Bay Area project discussions."
+        }
+      ],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": true,
+      "rsvp": "no separate RSVP found",
+      "introduced_at_meeting": false,
+      "membership_status": "public_partner_guest_not_a_member",
+      "notes": "",
+      "company_name": "Innovation Norway"
+    },
+    {
+      "website": null,
+      "website_certainty": "unknown",
+      "short_description": "Introduced as working on industrial AI and robotics products, bridging industry and law. The invitation also describes a private individual membership category.",
+      "description_source": "Granola introductions; invitation (private membership).",
+      "description_certainty": "partial",
+      "contact_person": "Laksiya Balasubramaniam",
+      "contact_email": "laksiyab@gmail.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "individual_attendee",
+      "notes": "Also a writer on the Robotics Norway shared Drive.",
+      "company_name": "(individual) Laksiya Balasubramaniam"
+    },
+    {
+      "website": null,
+      "website_certainty": "unknown",
+      "short_description": null,
+      "description_source": null,
+      "description_certainty": "unknown",
+      "contact_person": null,
+      "contact_email": "mike@finks.email",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": true,
+      "rsvp": null,
+      "introduced_at_meeting": false,
+      "membership_status": "calendar_guest_organisation_unknown",
+      "notes": "On the calendar guest list only. Do not invent a company name.",
+      "company_name": "(unknown organisation)"
+    }
+  ],
+  "declined_according_to_invitation": [
+    {
+      "company_name": "AutoStore",
+      "notes": "Listed under Declined in the invitation. No calendar guest from AutoStore found."
+    },
+    {
+      "company_name": "Cognite",
+      "notes": "Listed under Declined for membership, but a Cognite employee attended the meeting (see members)."
+    },
+    {
+      "company_name": "Intek",
+      "notes": "Anita Hager <Anita.Hager@intek.no> wrote on 2 Nov 2026 that participation is not right for Intek given their needs. Lars-Fredrik replied they are welcome later."
+    }
+  ],
+  "invited_not_listed_as_joining": [
+    "Trener Robotics",
+    "Zivid",
+    "Six Robotics",
+    "Saga Robotics",
+    "Kongsberg Maritime",
+    "BlueEye Robotics / Blueye Robotics",
+    "Kilter",
+    "Kongsberg Ferrotech",
+    "Remora Robotics",
+    "Manufacturing Technology Catapult (Raufoss)",
+    "Skala Robotech (Lier / Drammen)",
+    "Robotnorge/TYO Automation (Klepp)",
+    "Maskon (Stjørdal)",
+    "Company in Skjeberg",
+    "Robotic Innovation (invitation email sent to annette@roboticinnovation.no)"
+  ]
+}
