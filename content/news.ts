@@ -271,6 +271,17 @@ export const articles: NewsArticle[] = [
       paragraph(
         "Robotics Norway is meant to complement existing networks such as the Norwegian Robotics Cluster and Necia, not compete with them, and members are free to take part in several. Before any new labs are built, the network will map the robot labs and test arenas that already exist across Norway.",
       ),
+      {
+        type: "paragraph",
+        runs: [
+          { text: "Read the " },
+          {
+            text: "full minutes of the founding meeting",
+            href: "https://docs.google.com/document/d/1-pAQCUOvl1dilJpSmy71cnD_6kyUWEN35i8tzrYDHSk/edit",
+          },
+          { text: "." },
+        ],
+      },
       paragraph(
         "The agenda of the founding meeting covered adopting the charter, the \"A door to the Bay Area\" project, administration, the budget and a steering group. Participants were there in person at StartupLab and online.",
       ),

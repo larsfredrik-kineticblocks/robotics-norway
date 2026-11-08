@@ -40,7 +40,7 @@ export default async function DocumentPage({ params }: { params: Promise<{ slug:
         {document.publicAnyoneWithLink ? " · Anyone with the link can view the file" : ""}
       </p>
       <p className="mt-4">
-        <a className="font-heading text-sm tracking-wide text-flag hover:underline" href={document.link} target="_blank" rel="noreferrer">
+        <a className="font-heading text-sm tracking-wide text-flag hover:underline" href={document.link} target="_blank" rel="noopener noreferrer">
           Open in Google
         </a>
       </p>

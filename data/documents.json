@@ -4,7 +4,7 @@
     "name": "Robotics Norway",
     "url": "https://drive.google.com/drive/folders/0AOC8ZRNR_c8xUk9PVA",
     "membersOnly": true,
-    "note": "The shared Drive folder is limited to named members. It is not public. Each of the four files below is shared so anyone with the link can view it."
+    "note": "The shared Drive folder is limited to named members. It is not public. Each of the files below is shared so anyone with the link can view it."
   },
   "documents": [
     {
@@ -41,6 +41,19 @@
       "lastModified": "2026-11-05T09:16:23.003Z",
       "publicAnyoneWithLink": true,
       "extract": "section-a",
+      "translation": null
+    },
+    {
+      "slug": "founding-meeting-minutes",
+      "name": "Minutes – Robotics Norway founding meeting, 5 November 2026",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "id": "1-pAQCUOvl1dilJpSmy71cnD_6kyUWEN35i8tzrYDHSk",
+      "link": "https://docs.google.com/document/d/1-pAQCUOvl1dilJpSmy71cnD_6kyUWEN35i8tzrYDHSk/edit",
+      "lastModified": "2026-11-05T12:00:00.000Z",
+      "publicAnyoneWithLink": true,
+      "extract": null,
+      "summary": "Minutes from the founding meeting at Startuplab on 5 November 2026: member introductions, existing initiatives, the Bay Area project, robot labs, the steering group and next steps.",
       "translation": null
     },
     {

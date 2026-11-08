@@ -34,6 +34,7 @@ export type CorpusDocument = {
   link: string;
   lastModified: string;
   publicAnyoneWithLink: boolean;
+  summary: string | null;
   text: string;
   translation: {
     title: string;

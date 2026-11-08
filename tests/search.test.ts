@@ -65,9 +65,19 @@ test("search finds the founding news article", () => {
   assert.match(text, /What the meeting agreed/);
   assert.match(text, /Around 30 companies and organisations took part/);
   const agreed = text.indexOf("What the meeting agreed");
+  const minutesLink = text.indexOf("full minutes of the founding meeting");
   const taken = text.indexOf("Taken together, the points describe");
   const agenda = text.indexOf("The agenda of the founding meeting covered");
-  assert.ok(taken < agreed && agreed < agenda);
+  assert.ok(taken < agreed && agreed < minutesLink && minutesLink < agenda);
+
+  const minutes = data.documents.find((document) => document.slug === "founding-meeting-minutes");
+  assert.ok(minutes);
+  assert.equal(
+    minutes.link,
+    "https://docs.google.com/document/d/1-pAQCUOvl1dilJpSmy71cnD_6kyUWEN35i8tzrYDHSk/edit",
+  );
+  assert.match(minutes.summary ?? "", /steering group and next steps/);
+  assert.ok(minutes.text.length < 400);
 
   const hits = searchDocuments(data.searchDocuments, "founding meeting StartupLab");
   const news = hits.find((hit) => hit.href === "/news/robotics-norway-is-founded");

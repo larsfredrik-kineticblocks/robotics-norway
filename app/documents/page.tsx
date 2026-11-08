@@ -39,11 +39,12 @@ export default function DocumentsPage() {
                   <Link href={`/documents/${document.slug}`} className="text-navy hover:underline">
                     {document.name}
                   </Link>
+                  {document.summary ? <p className="mt-1 max-w-xl leading-6 text-muted-foreground">{document.summary}</p> : null}
                 </td>
                 <td className="py-4 pr-4 text-muted-foreground">{document.type}</td>
                 <td className="py-4 pr-4 text-muted-foreground">{formatOsloDate(document.lastModified)}</td>
                 <td className="py-4">
-                  <a className="text-flag hover:underline" href={document.link} target="_blank" rel="noreferrer">
+                  <a className="text-flag hover:underline" href={document.link} target="_blank" rel="noopener noreferrer">
                     Open
                   </a>
                 </td>

@@ -17,7 +17,8 @@ type DocumentMeta = {
   link: string;
   lastModified: string;
   publicAnyoneWithLink: boolean;
-  extract: string;
+  extract: string | null;
+  summary?: string;
   translation: string | null;
 };
 
@@ -106,9 +107,16 @@ export function buildSearchCorpus(): SearchCorpus {
   };
 
   const documents: CorpusDocument[] = documentsFile.documents.map((document) => {
-    const bundled = extracts[document.extract];
-    if (!bundled) throw new Error(`Unknown extract '${document.extract}' for ${document.slug}`);
-    const text = extractedOverride(document.slug) ?? bundled;
+    const summary = document.summary?.trim() || null;
+    let text: string;
+    if (summary) {
+      text = summary;
+    } else {
+      if (!document.extract) throw new Error(`Missing extract for ${document.slug}`);
+      const bundled = extracts[document.extract];
+      if (!bundled) throw new Error(`Unknown extract '${document.extract}' for ${document.slug}`);
+      text = extractedOverride(document.slug) ?? bundled;
+    }
     const translation = document.translation ? translations[document.translation] : null;
     if (document.translation && !translation) {
       throw new Error(`Unknown translation '${document.translation}'`);
@@ -122,6 +130,7 @@ export function buildSearchCorpus(): SearchCorpus {
       link: document.link,
       lastModified: document.lastModified,
       publicAnyoneWithLink: document.publicAnyoneWithLink,
+      summary,
       text,
       translation: translation
         ? { title: translation.title, notice: translationNotice, text: translation.text }
