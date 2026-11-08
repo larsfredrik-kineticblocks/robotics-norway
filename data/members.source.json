@@ -181,7 +181,7 @@
     {
       "website": "https://runwayfbu.com",
       "website_certainty": "uncertain",
-      "short_description": "Investment fund for the future of industry including robotics; also runs an AI/robotics hub (as introduced by Hanna and MK). LinkedIn company page describes a tech hub with 60+ companies and an AI and Robotics Lab at Aker Tech House, Fornebu, related to RunwayVC (runway.vc).",
+      "short_description": "Investment fund for the future of industry including robotics; also runs an AI/robotics hub (as introduced by Hanna Selvaag Wangsmo and Maria Katarina Michelsen). LinkedIn company page describes a tech hub with 60+ companies and an AI and Robotics Lab at Aker Tech House, Fornebu, related to RunwayVC (runway.vc).",
       "description_source": "Granola introductions; LinkedIn company page snippet in search results.",
       "description_certainty": "partial",
       "contact_person": "Hanna Selvaag Wangsmo",
@@ -194,8 +194,9 @@
           "note": "Same person also accepted from this address."
         },
         {
-          "name": "MK",
+          "name": "Maria Katarina Michelsen",
           "email": "maria@runwayfbu.com",
+          "note": "Head of Community, RunwayFBU (LinkedIn). Steering group.",
           "rsvp": "accepted"
         }
       ],
