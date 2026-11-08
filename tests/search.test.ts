@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import corpus from "../data/search-corpus.json";
 import { charter } from "../content/charter";
-import { articleBodyWordCount, articlesByDate, compareArticles, getArticle } from "../content/news";
+import { articlesByDate, compareArticles, getArticle } from "../content/news";
 import { groupHits, searchDocuments } from "../lib/search";
 import type { SearchCorpus } from "../lib/types";
 
@@ -54,8 +54,20 @@ test("humanoids at work is featured ahead of the founding article", () => {
 test("search finds the founding news article", () => {
   const article = getArticle("robotics-norway-is-founded");
   assert.ok(article);
-  const words = articleBodyWordCount(article);
-  assert.ok(words >= 400 && words <= 600, `expected 400–600 words, got ${words}`);
+  const text = article.blocks
+    .flatMap((block) => {
+      if (block.type === "paragraph") return [block.runs.map((run) => run.text).join("")];
+      if (block.type === "heading") return [block.text];
+      return [];
+    })
+    .join("\n");
+  assert.match(text, /Five hundred robot labs\. The charter calls for labs/);
+  assert.match(text, /What the meeting agreed/);
+  assert.match(text, /Around 30 companies and organisations took part/);
+  const agreed = text.indexOf("What the meeting agreed");
+  const taken = text.indexOf("Taken together, the points describe");
+  const agenda = text.indexOf("The agenda of the founding meeting covered");
+  assert.ok(taken < agreed && agreed < agenda);
 
   const hits = searchDocuments(data.searchDocuments, "founding meeting StartupLab");
   const news = hits.find((hit) => hit.href === "/news/robotics-norway-is-founded");
