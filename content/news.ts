@@ -34,7 +34,7 @@ const hero: NewsFigure = {
   alt: "Participants at Robotics Norway's founding meeting on 5 November 2026.",
   width: 1600,
   height: 1041,
-  caption: "Participants at Robotics Norway's founding meeting on 5 November 2026.",
+  caption: "Participants at the founding meeting.",
 };
 
 function paragraph(text: string): NewsBlock {
@@ -82,32 +82,32 @@ export const articles: NewsArticle[] = [
         figures: [
           {
             src: "/news/opening-2.jpg",
-            alt: "A speaker presents next steps for Robotics Norway to participants attending in person and online. The slide on screen reads 'BEFORE WE LEAVE THE ROOM'.",
+            alt: "Lars-Fredrik Forberg, who chaired the founding meeting, presents next steps for Robotics Norway to participants in the room and online.",
             width: 1600,
             height: 1066,
             caption:
-              "A speaker presents next steps for Robotics Norway to participants attending in person and online. The slide on screen reads 'BEFORE WE LEAVE THE ROOM'.",
+              "Lars-Fredrik Forberg, who chaired the founding meeting, presents next steps for Robotics Norway to participants in the room and online.",
           },
           {
             src: "/news/opening-3.jpg",
             alt: "Participants exchange ideas beside the staircase during the founding meeting.",
             width: 1600,
             height: 1052,
-            caption: "Participants exchange ideas beside the staircase during the founding meeting.",
+            caption: "Exchanging ideas beside the staircase.",
           },
           {
             src: "/news/opening-4.jpg",
             alt: "Participants network outside the StartupLab Hardware space.",
             width: 1600,
             height: 1012,
-            caption: "Participants network outside the StartupLab Hardware space.",
+            caption: "Outside StartupLab Hardware.",
           },
           {
             src: "/news/opening-5.jpg",
-            alt: "A participant at the Robotics Norway launch.",
+            alt: "Lars-Fredrik Forberg chaired the founding meeting of Robotics Norway.",
             width: 976,
             height: 1600,
-            caption: "A participant at the Robotics Norway launch.",
+            caption: "Lars-Fredrik Forberg chaired the founding meeting of Robotics Norway.",
             objectPosition: "center 18%",
           },
         ],
