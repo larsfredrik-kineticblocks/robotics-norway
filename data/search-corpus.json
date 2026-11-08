@@ -44,6 +44,19 @@
   },
   "documents": [
     {
+      "slug": "steering-group-notice",
+      "name": "Notice and agenda – Robotics Norway steering group meeting",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "id": "1T8SNbLHMuqJPy4-OnJhFq8KPR3v3k5UOLtV2DoyZMuk",
+      "link": "https://docs.google.com/document/d/1T8SNbLHMuqJPy4-OnJhFq8KPR3v3k5UOLtV2DoyZMuk/edit",
+      "lastModified": "2026-11-08T12:00:00.000Z",
+      "publicAnyoneWithLink": true,
+      "summary": "Notice and agenda for the first steering group meeting: approval of the charter, the website, and two proposed projects, A door to the Bay Area and A door to China. Date to be set.",
+      "text": "Notice and agenda for the first steering group meeting: approval of the charter, the website, and two proposed projects, A door to the Bay Area and A door to China. Date to be set.",
+      "translation": null
+    },
+    {
       "slug": "intensjonsavtale",
       "name": "Intensjonsavtale Robotics Norway",
       "type": "Google Doc",
@@ -189,6 +202,14 @@
       "meta": "5 November 2026",
       "href": "/news/robotics-norway-is-founded",
       "text": "Participants met in person and online at StartupLab in Oslo on 5 November 2026 for the founding meeting of the Robotics Norway network.\n\nNetwork\n\nParticipants at the founding meeting.\n\nPhotos: StartupLab\n\nOn 5 November 2026, Robotics Norway held its founding meeting at StartupLab in Oslo. Participants joined in person and online. The public charter from the meeting describes Robotics Norway as the network and cluster for Norwegian companies that build robots, physical AI, and the data and software around them.\n\nThe charter states the purpose of the network. It is to give members a shared route to buyers, partners, talent and investors, at home and abroad. It is written for companies and organisations in robotics and physical AI, and it is also open to individuals who join as private members. The wording is the English text from the founding-meeting slides, whose title is CHARTER / WHAT ROBOTICS NORWAY WILL BE. That text is published on this site.\n\nThe charter has six points.\n\nOpen membership. The network is open to companies and organisations in robotics and physical AI, and to individuals as private members.\n\nRun by its members. Members elect the steering group, set the fees and take turns as administrator, one year at a time.\n\nFive hundred robot labs. The charter calls for labs in Norwegian cities where members test, collect data and demonstrate, starting at StartupLab. The heading on the slide is 500 robot labs.\n\nStudy trips. Members are to make joint trips to Odense, San Francisco and Shenzhen to meet clusters, buyers and manufacturers together.\n\nA door to the Bay Area. The charter describes a funded project, led by Innovation Norway, that introduces Norwegian robotics companies to the Bay Area.\n\nTrust between members. Market information shared in the network stays confidential, and every member runs its own business freely.\n\nLars-Fredrik Forberg, who chaired the founding meeting, presents next steps for Robotics Norway to participants in the room and online.\n\nExchanging ideas beside the staircase.\n\nOutside StartupLab Hardware.\n\nLars-Fredrik Forberg chaired the founding meeting of Robotics Norway.\n\nPhotos: StartupLab\n\nTaken together, the points describe a network run by its members. They elect the steering group, set the fees and take turns as administrator, one year at a time. They share a route to buyers, partners, talent and investors in Norway and abroad. Market information shared among them stays confidential, and each member runs its own business freely. The practical work named in the charter is robot labs in Norwegian cities, starting at StartupLab, joint study trips to Odense, San Francisco and Shenzhen, and a funded Bay Area project led by Innovation Norway. The same six headings are published on the front page of this site.\n\nWhat the meeting agreed\n\nAround 30 companies and organisations took part, in the room and online, from startups to Ruter, Posten Bring, Cognite and Oslo kommune. The participants backed the initiative and agreed on three things.\n\nA small steering group was formed, with Daniel (Saro Robotics), Eva (Necia), Christian Rokseth (Humanoid.guide) and Runway FBU confirmed, and others invited to join. Four to five companies signed up their interest in \"A door to the Bay Area\", and a letter of intent is now going out so the network can apply to Innovation Norway. Around 16 people raised their hands for a study trip to Shenzhen, which will be coordinated with the Norwegian Robotics Cluster.\n\nRobotics Norway is meant to complement existing networks such as the Norwegian Robotics Cluster and Necia, not compete with them, and members are free to take part in several. Before any new labs are built, the network will map the robot labs and test arenas that already exist across Norway.\n\nRead the full minutes of the founding meeting.\n\nThe agenda of the founding meeting covered adopting the charter, the \"A door to the Bay Area\" project, administration, the budget and a steering group. Participants were there in person at StartupLab and online.\n\nCompanies, organisations and individuals who want to take part can apply through the members join form. The projects anchored in the network, including \"A door to the Bay Area\", are described on the Projects page.\n\nRead Shifter's coverage of the founding meeting (in Norwegian): Starter nytt robotikk-nettverk"
+    },
+    {
+      "id": "document-steering-group-notice",
+      "group": "Documents",
+      "title": "Notice and agenda – Robotics Norway steering group meeting",
+      "meta": "Google Doc",
+      "href": "/documents/steering-group-notice",
+      "text": "Notice and agenda for the first steering group meeting: approval of the charter, the website, and two proposed projects, A door to the Bay Area and A door to China. Date to be set."
     },
     {
       "id": "document-intensjonsavtale",

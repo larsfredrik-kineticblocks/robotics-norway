@@ -8,6 +8,19 @@
   },
   "documents": [
     {
+      "slug": "steering-group-notice",
+      "name": "Notice and agenda – Robotics Norway steering group meeting",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "id": "1T8SNbLHMuqJPy4-OnJhFq8KPR3v3k5UOLtV2DoyZMuk",
+      "link": "https://docs.google.com/document/d/1T8SNbLHMuqJPy4-OnJhFq8KPR3v3k5UOLtV2DoyZMuk/edit",
+      "lastModified": "2026-11-08T12:00:00.000Z",
+      "publicAnyoneWithLink": true,
+      "extract": null,
+      "summary": "Notice and agenda for the first steering group meeting: approval of the charter, the website, and two proposed projects, A door to the Bay Area and A door to China. Date to be set.",
+      "translation": null
+    },
+    {
       "slug": "intensjonsavtale",
       "name": "Intensjonsavtale Robotics Norway",
       "type": "Google Doc",
