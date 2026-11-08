@@ -132,6 +132,16 @@ export const articles: NewsArticle[] = [
           { text: "." },
         ],
       },
+      {
+        type: "paragraph",
+        runs: [
+          { text: "Read Shifter's coverage of the founding meeting (in Norwegian): " },
+          {
+            text: "Starter nytt robotikk-nettverk",
+            href: "https://www.shifter.no/nyheter/starter-nytt-robotikk-nettverk/481686",
+          },
+        ],
+      },
     ],
   },
 ];

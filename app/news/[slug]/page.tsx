@@ -29,20 +29,27 @@ export async function generateMetadata({
   };
 }
 
+function isExternalHref(href: string) {
+  return href.startsWith("https://") || href.startsWith("http://");
+}
+
 function RichText({ runs }: { runs: TextRun[] }) {
-  return runs.map((run, index) =>
-    run.href ? (
-      <Link
-        key={index}
-        href={run.href}
-        className="text-navy underline decoration-border underline-offset-4 hover:decoration-navy"
-      >
+  const className = "text-navy underline decoration-border underline-offset-4 hover:decoration-navy";
+  return runs.map((run, index) => {
+    if (!run.href) return <span key={index}>{run.text}</span>;
+    if (isExternalHref(run.href)) {
+      return (
+        <a key={index} href={run.href} target="_blank" rel="noopener noreferrer" className={className}>
+          {run.text}
+        </a>
+      );
+    }
+    return (
+      <Link key={index} href={run.href} className={className}>
         {run.text}
       </Link>
-    ) : (
-      <span key={index}>{run.text}</span>
-    ),
-  );
+    );
+  });
 }
 
 export default async function NewsArticlePage({ params }: { params: Promise<{ slug: string }> }) {
