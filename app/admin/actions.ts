@@ -62,7 +62,9 @@ export async function updateMember(_prev: ActionState, formData: FormData): Prom
     return { status: "error", message: null, fieldErrors: { logo: logo.error } };
   }
   const parsed = parseMemberEdit({
+    membershipType: String(formData.get("membershipType") ?? ""),
     companyName: String(formData.get("companyName") ?? ""),
+    affiliation: String(formData.get("affiliation") ?? ""),
     website: String(formData.get("website") ?? ""),
     logoUrl: String(formData.get("logoUrl") ?? ""),
     description: String(formData.get("description") ?? ""),

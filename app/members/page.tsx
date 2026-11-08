@@ -9,7 +9,7 @@ import { cn } from "cn";
 
 export const metadata: Metadata = {
   title: "Members",
-  description: "Companies and organisations in Robotics Norway.",
+  description: "Companies, organisations and individual members of Robotics Norway.",
 };
 
 async function Directory() {
@@ -26,7 +26,7 @@ export default function MembersPage() {
           <p className="font-heading text-sm tracking-[0.14em] text-flag uppercase">Members</p>
           <h1 className="mt-3 font-heading text-4xl text-navy sm:text-5xl">The network</h1>
           <p className="mt-5 leading-7">
-            Organisations that were present at, or part of, the founding meeting on 5 November 2026 at Startuplab in Oslo. New companies apply and stay pending until an administrator approves them.
+            Companies, organisations and individuals that were present at, or part of, the founding meeting on 5 November 2026 at Startuplab in Oslo. New members apply and stay pending until an administrator approves them.
           </p>
         </div>
         <Link href="/join" className={cn(buttonVariants({ size: "lg" }), "h-11 bg-flag px-5 text-white hover:bg-flag/90")}>

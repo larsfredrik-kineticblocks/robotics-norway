@@ -19,9 +19,23 @@ export function MemberEditor({ member }: { member: MemberRecord }) {
       <input type="hidden" name="existingLogo" value={member.logoUrl ?? ""} />
       {state.message ? <p className="text-sm text-flag">{state.message}</p> : null}
       <div className="space-y-2">
-        <Label htmlFor="companyName">Company</Label>
+        <Label htmlFor="membershipType">Membership</Label>
+        <select id="membershipType" name="membershipType" defaultValue={member.membershipType} className="h-11 w-full rounded-lg border border-input bg-white px-3">
+          <option value="organisation">Company or organisation</option>
+          <option value="individual">Individual</option>
+        </select>
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="companyName">{member.membershipType === "individual" ? "Full name" : "Company"}</Label>
         <Input id="companyName" name="companyName" defaultValue={member.companyName} className="h-11 md:text-base" />
-        {state.fieldErrors.companyName ? <p className="text-sm text-flag">{state.fieldErrors.companyName}</p> : null}
+        {state.fieldErrors.companyName || state.fieldErrors.fullName ? (
+          <p className="text-sm text-flag">{state.fieldErrors.fullName ?? state.fieldErrors.companyName}</p>
+        ) : null}
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="affiliation">Affiliation or title</Label>
+        <Input id="affiliation" name="affiliation" defaultValue={member.affiliation ?? ""} className="h-11 md:text-base" />
+        {state.fieldErrors.affiliation ? <p className="text-sm text-flag">{state.fieldErrors.affiliation}</p> : null}
       </div>
       <div className="space-y-2">
         <Label htmlFor="website">Website</Label>

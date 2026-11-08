@@ -5,17 +5,20 @@ import { databaseConfigured, getDb } from "@/lib/db";
 import { members } from "@/lib/db/schema";
 import { publicMembers } from "@/lib/members";
 import { slugify } from "@/lib/text";
-import type { MemberRecord, MemberStatus } from "@/lib/types";
+import type { MemberRecord, MemberStatus, MembershipType } from "@/lib/types";
 
 type MemberRow = typeof members.$inferSelect;
 
 function mapRow(row: MemberRow): MemberRecord {
   const status: MemberStatus =
     row.status === "approved" || row.status === "rejected" ? row.status : "pending";
+  const membershipType: MembershipType = row.membershipType === "individual" ? "individual" : "organisation";
   return {
     id: String(row.id),
     slug: slugify(row.companyName),
+    membershipType,
     companyName: row.companyName,
+    affiliation: row.affiliation,
     website: row.website,
     logoUrl: row.logoUrl,
     description: row.description,

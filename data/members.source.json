@@ -550,12 +550,12 @@
     {
       "website": "https://www.cognite.com",
       "website_certainty": "verified",
-      "short_description": "Industrial AI and data platform; drones and inspection robots as data sources (as introduced by Kristoffer Gjerde).",
+      "short_description": "Industrial AI and data platform; drones and inspection robots as data sources.",
       "description_source": "Granola introductions.",
       "description_certainty": "partial",
-      "contact_person": "Kristoffer Gjerde",
-      "contact_email": "kristoffer.gjerde@cognite.com",
-      "contact_certainty": "verified",
+      "contact_person": null,
+      "contact_email": null,
+      "contact_certainty": "unknown",
       "additional_contacts": [],
       "logo_url": null,
       "logo_certainty": "unknown",
@@ -563,8 +563,8 @@
       "on_calendar_guest_list": true,
       "rsvp": "accepted",
       "introduced_at_meeting": true,
-      "membership_status": "attended_meeting_invitation_says_declined_membership",
-      "notes": "Invitation 'Declined' list includes Cognite. Kristoffer requested access to the Robotics Norway shared disk on 5 Nov 2026 and was granted reader access.",
+      "membership_status": "declined",
+      "notes": "Not a member. Kristoffer Gjerde is an individual member.",
       "company_name": "Cognite"
     },
     {
@@ -681,9 +681,33 @@
       "on_calendar_guest_list": true,
       "rsvp": "accepted",
       "introduced_at_meeting": true,
-      "membership_status": "individual_attendee",
+      "membership_kind": "individual",
+      "affiliation": null,
+      "membership_status": "individual_member",
       "notes": "Also a writer on the Robotics Norway shared Drive.",
-      "company_name": "(individual) Laksiya Balasubramaniam"
+      "company_name": "Laksiya Balasubramaniam"
+    },
+    {
+      "website": null,
+      "website_certainty": "unknown",
+      "membership_kind": "individual",
+      "affiliation": null,
+      "short_description": null,
+      "description_source": "Founding meeting attendance. No separate public biography is published.",
+      "description_certainty": "unknown",
+      "contact_person": "Kristoffer Gjerde",
+      "contact_email": "kristoffer.gjerde@cognite.com",
+      "contact_certainty": "verified",
+      "additional_contacts": [],
+      "logo_url": null,
+      "logo_certainty": "unknown",
+      "on_inception_list": false,
+      "on_calendar_guest_list": true,
+      "rsvp": "accepted",
+      "introduced_at_meeting": true,
+      "membership_status": "individual_member",
+      "notes": "Individual member. Moved from the Cognite company entry. Email is not shown on the public directory.",
+      "company_name": "Kristoffer Gjerde"
     },
     {
       "website": null,
@@ -713,7 +737,7 @@
     },
     {
       "company_name": "Cognite",
-      "notes": "Listed under Declined for membership, but a Cognite employee attended the meeting (see members)."
+      "notes": "Not a member. Kristoffer Gjerde is an individual member."
     },
     {
       "company_name": "Intek",

@@ -7,6 +7,8 @@ import type { MemberRecord } from "../lib/types";
 const member: MemberRecord = {
   id: "1",
   slug: "example",
+  membershipType: "organisation",
+  affiliation: null,
   companyName: 'Example, "Robotics"',
   website: "https://example.no",
   logoUrl: null,
@@ -21,11 +23,11 @@ const member: MemberRecord = {
 test("csv export quotes special characters and uses the mailing columns", () => {
   const csv = membersToCsv([member]);
   assert.ok(csv.startsWith("\uFEFF"));
-  assert.match(csv, /company,website,contact person,email,description,status,joined date/);
+  assert.match(csv, /membership type,company,affiliation,website,contact person,email,description,status,joined date/);
   assert.match(csv, /"Example, ""Robotics"""/);
   assert.match(csv, /"Line one\nLine two"/);
   assert.match(csv, /2026-11-05/);
-  assert.equal(EXPORT_COLUMNS.length, 7);
+  assert.equal(EXPORT_COLUMNS.length, 9);
 });
 
 test("xlsx export round-trips the same columns", () => {

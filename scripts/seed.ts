@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { drizzle } from "drizzle-orm/node-postgres";
@@ -28,7 +28,9 @@ export async function seed() {
         .limit(1);
 
       const values = {
+        membershipType: member.membershipType,
         companyName: member.companyName,
+        affiliation: member.affiliation,
         website: member.website,
         logoUrl: member.logoUrl,
         description: member.description,
@@ -62,12 +64,14 @@ export async function applySchema() {
   }
   const pool = new Pool({ connectionString });
   try {
-    const sqlFile = readFileSync(
-      path.join(process.cwd(), "drizzle/0000_members.sql"),
-      "utf8",
-    );
-    await pool.query(sqlFile);
-    console.log("Applied drizzle/0000_members.sql");
+    const directory = path.join(process.cwd(), "drizzle");
+    const files = readdirSync(directory)
+      .filter((file) => file.endsWith(".sql"))
+      .sort();
+    for (const file of files) {
+      await pool.query(readFileSync(path.join(directory, file), "utf8"));
+      console.log(`Applied drizzle/${file}`);
+    }
   } finally {
     await pool.end();
   }

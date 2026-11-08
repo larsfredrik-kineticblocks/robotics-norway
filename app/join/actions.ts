@@ -9,8 +9,12 @@ export async function submitApplication(_prev: ActionState, formData: FormData):
   if ("error" in logo && logo.error) {
     return { status: "error", message: null, fieldErrors: { logo: logo.error } };
   }
+  const membershipType = String(formData.get("membershipType") ?? "");
   const parsed = parseApplication({
+    membershipType,
     companyName: String(formData.get("companyName") ?? ""),
+    fullName: String(formData.get("fullName") ?? ""),
+    affiliation: String(formData.get("affiliation") ?? ""),
     website: String(formData.get("website") ?? ""),
     logoUrl: String(formData.get("logoUrl") ?? ""),
     description: String(formData.get("description") ?? ""),

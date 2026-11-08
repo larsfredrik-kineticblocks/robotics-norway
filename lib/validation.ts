@@ -1,6 +1,10 @@
+import type { MembershipType } from "@/lib/types";
+
 export type ApplicationInput = {
+  membershipType: MembershipType;
   companyName: string;
-  website: string;
+  affiliation: string | null;
+  website: string | null;
   logoUrl: string | null;
   description: string;
   contactPerson: string;
@@ -50,7 +54,10 @@ export function validateLogoDataUrl(value: string): string | null {
 }
 
 export function parseApplication(input: {
+  membershipType?: string;
   companyName?: string;
+  fullName?: string;
+  affiliation?: string;
   website?: string;
   logoUrl?: string;
   description?: string;
@@ -60,51 +67,73 @@ export function parseApplication(input: {
   logoDataUrl?: string | null;
 }): { ok: true; data: ApplicationInput } | { ok: false; fieldErrors: FieldErrors } {
   const fieldErrors: FieldErrors = {};
+  const membershipType: MembershipType = input.membershipType === "individual" ? "individual" : "organisation";
   const companyName = input.companyName?.trim() ?? "";
-  const website = normalizeWebsite(input.website ?? "");
+  const fullName = input.fullName?.trim() ?? "";
+  const affiliation = input.affiliation?.trim() ?? "";
+  const websiteRaw = normalizeWebsite(input.website ?? "");
   const logoUrlRaw = input.logoUrl?.trim() ?? "";
   const description = input.description?.trim() ?? "";
   const contactPerson = input.contactPerson?.trim() ?? "";
   const contactEmail = input.contactEmail?.trim().toLowerCase() ?? "";
 
-  if (companyName.length < 2) {
-    fieldErrors.companyName = "Enter the company name.";
-  } else if (companyName.length > 160) {
-    fieldErrors.companyName = "Company name is too long.";
-  }
-
-  if (!website || !validHttpUrl(website)) {
-    fieldErrors.website = "Enter a valid company website.";
+  if (membershipType === "individual") {
+    if (fullName.length < 2) fieldErrors.fullName = "Enter your full name.";
+    else if (fullName.length > 160) fieldErrors.fullName = "Name is too long.";
+    if (affiliation.length > 160) fieldErrors.affiliation = "Affiliation is too long.";
+  } else {
+    if (companyName.length < 2) {
+      fieldErrors.companyName = "Enter the company name.";
+    } else if (companyName.length > 160) {
+      fieldErrors.companyName = "Company name is too long.";
+    }
+    if (!websiteRaw || !validHttpUrl(websiteRaw)) {
+      fieldErrors.website = "Enter a valid company website.";
+    }
+    if (contactPerson.length < 2) {
+      fieldErrors.contactPerson = "Enter a contact person.";
+    }
   }
 
   if (description.length < 20) {
-    fieldErrors.description = "Write a short description of at least 20 characters.";
+    fieldErrors.description =
+      membershipType === "individual"
+        ? "Write a short note of at least 20 characters."
+        : "Write a short description of at least 20 characters.";
   } else if (description.length > 600) {
     fieldErrors.description = "Keep the description under 600 characters.";
   }
 
-  if (contactPerson.length < 2) {
-    fieldErrors.contactPerson = "Enter a contact person.";
-  }
-
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail)) {
-    fieldErrors.contactEmail = "Enter a valid company email.";
+    fieldErrors.contactEmail = membershipType === "individual" ? "Enter a valid email." : "Enter a valid company email.";
   }
 
   if (input.consent !== true) {
     fieldErrors.consent = "Consent is required before the application can be stored.";
   }
 
+  let website: string | null = null;
+  if (membershipType === "individual") {
+    if (websiteRaw) {
+      if (!validHttpUrl(websiteRaw)) fieldErrors.website = "Enter a valid LinkedIn or website address.";
+      else website = websiteRaw;
+    }
+  } else if (websiteRaw && validHttpUrl(websiteRaw)) {
+    website = websiteRaw;
+  }
+
   let logoUrl: string | null = null;
-  if (input.logoDataUrl) {
-    const logoError = validateLogoDataUrl(input.logoDataUrl);
-    if (logoError) fieldErrors.logo = logoError;
-    else logoUrl = input.logoDataUrl.trim();
-  } else if (logoUrlRaw) {
-    if (!validHttpUrl(logoUrlRaw)) {
-      fieldErrors.logo = "Logo URL must start with http:// or https://.";
-    } else {
-      logoUrl = logoUrlRaw;
+  if (membershipType === "organisation") {
+    if (input.logoDataUrl) {
+      const logoError = validateLogoDataUrl(input.logoDataUrl);
+      if (logoError) fieldErrors.logo = logoError;
+      else logoUrl = input.logoDataUrl.trim();
+    } else if (logoUrlRaw) {
+      if (!validHttpUrl(logoUrlRaw)) {
+        fieldErrors.logo = "Logo URL must start with http:// or https://.";
+      } else {
+        logoUrl = logoUrlRaw;
+      }
     }
   }
 
@@ -115,18 +144,22 @@ export function parseApplication(input: {
   return {
     ok: true,
     data: {
-      companyName,
+      membershipType,
+      companyName: membershipType === "individual" ? fullName : companyName,
+      affiliation: membershipType === "individual" && affiliation ? affiliation : null,
       website,
       logoUrl,
       description,
-      contactPerson,
+      contactPerson: membershipType === "individual" ? fullName : contactPerson,
       contactEmail,
     },
   };
 }
 
 export function parseMemberEdit(input: {
+  membershipType?: string;
   companyName?: string;
+  affiliation?: string;
   website?: string;
   logoUrl?: string;
   description?: string;
@@ -135,7 +168,13 @@ export function parseMemberEdit(input: {
   status?: string;
   logoDataUrl?: string | null;
 }): { ok: true; data: ApplicationInput & { status: "approved" | "pending" | "rejected" } } | { ok: false; fieldErrors: FieldErrors } {
-  const parsed = parseApplication({ ...input, consent: true });
+  const membershipType = input.membershipType === "individual" ? "individual" : "organisation";
+  const parsed = parseApplication({
+    ...input,
+    membershipType,
+    fullName: membershipType === "individual" ? input.companyName : "",
+    consent: true,
+  });
   const fieldErrors = parsed.ok ? {} : { ...parsed.fieldErrors };
   delete fieldErrors.consent;
   const status = input.status;

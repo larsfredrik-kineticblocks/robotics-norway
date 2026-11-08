@@ -24,9 +24,9 @@ Open [http://127.0.0.1:4317](http://127.0.0.1:4317).
 ## Pages
 
 - `/` — short description, the public charter (introduction and six points), search, and the document index
-- `/documents` — the four shared Drive files, plus a link to the members-only folder
-- `/members` — founding organisations, and a link to the join form
-- `/join` — company application, stored as pending when `DATABASE_URL` is set
+- `/documents` — shared documents, plus a link to the members-only folder
+- `/members` — founding organisations, then individual members, and a link to the join form
+- `/join` — application for a company, organisation or individual, stored as pending when `DATABASE_URL` is set
 - `/projects` — project list. Add another object to `content/projects.ts` to publish a new project
 - `/contact` — Lars-Fredrik Forberg, administrator
 - `/search` — grouped results, plus a clearly labelled web-search fallback
@@ -55,11 +55,11 @@ The member table is Postgres, accessed with Drizzle and the `pg` driver. Use a p
 DATABASE_URL="postgres://..." npm run db:setup
 ```
 
-`db:setup` applies `drizzle/0000_members.sql` and seeds the public founding list as approved members, with joined date 5 November 2026. `npm run db:seed` repeats the seed. Re-running the seed refreshes those founding profiles.
+`db:setup` applies the SQL files in `drizzle/` in order, including `0000_members.sql` and `0001_membership_type.sql`, and seeds the public founding list as approved members, with joined date 5 November 2026. `npm run db:seed` repeats the seed. Re-running the seed refreshes those founding profiles. Membership type is `organisation` or `individual`.
 
 Applications from `/join` are inserted with status `pending`. They appear on `/members` only after an administrator approves them. If the database is down or unset, public pages fall back to `data/members.source.json` filtered by `lib/members.ts`.
 
-Export from `/admin` (CSV and XLSX) requires a signed-in administrator and `DATABASE_URL`. Columns: company, website, contact person, email, description, status, joined date.
+Export from `/admin` (CSV and XLSX) requires a signed-in administrator and `DATABASE_URL`. Columns: membership type, company, affiliation, website, contact person, email, description, status, joined date. Individual applications store the person's name in the company column. Email addresses of individual members are kept for administrators and are not shown on the public directory.
 
 ## Admin and Google OAuth
 
@@ -100,4 +100,4 @@ The app is Next.js App Router and deploys with zero framework configuration. Tar
 
 ## Member list
 
-The public directory is seeded from organisations in `data/members.source.json` that were present at or part of the founding meeting. Private individuals, unknown organisations, companies that declined membership, and entries flagged uncertain are left out. Websites and logos marked uncertain in the source are not shown as if they were confirmed. Sonair’s image URL is an Open Graph picture, not a confirmed logo, so the card uses initials.
+The public directory is seeded from `data/members.source.json`. Organisations and individual members who were present at or part of the founding meeting are included. Unknown organisations, companies that declined membership, and entries flagged uncertain are left out. Approved individuals are listed under Individual members, with name and an optional affiliation, and without a public email. Websites and logos marked uncertain in the source are not shown as if they were confirmed. Sonair’s image URL is an Open Graph picture, not a confirmed logo, so the card uses initials.

@@ -46,6 +46,25 @@ test("logo upload must be a small image data url", () => {
   if (!parsed.ok) assert.match(parsed.fieldErrors.logo, /PNG/);
 });
 
+test("individual application does not require a company name", () => {
+  const parsed = parseApplication({
+    membershipType: "individual",
+    fullName: "Ada Norway",
+    contactEmail: "ada@example.no",
+    affiliation: "",
+    website: "linkedin.com/in/ada",
+    description: "I work on robot inspection and want to join the network.",
+    consent: true,
+  });
+  assert.equal(parsed.ok, true);
+  if (parsed.ok) {
+    assert.equal(parsed.data.membershipType, "individual");
+    assert.equal(parsed.data.companyName, "Ada Norway");
+    assert.equal(parsed.data.website, "https://linkedin.com/in/ada");
+    assert.equal(parsed.data.affiliation, null);
+  }
+});
+
 test("admin edit does not require the public consent box", () => {
   const parsed = parseMemberEdit({ ...valid, status: "approved" });
   assert.equal(parsed.ok, true);

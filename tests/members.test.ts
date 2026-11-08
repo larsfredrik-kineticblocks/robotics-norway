@@ -13,6 +13,8 @@ test("public members are the founding organisations that were present", () => {
     "Innovation Norway",
     "Kameleon Robotics",
     "Kinetic Blocks AS",
+    "Kristoffer Gjerde",
+    "Laksiya Balasubramaniam",
     "Lito",
     "Marselia Robotics",
     "Mechatronics Innovation Lab",
@@ -38,9 +40,9 @@ test("uncertain, declined, private and unknown entries are excluded", () => {
   assert.equal(reasons["Fisker Robotics"], "Flagged uncertain.");
   assert.equal(reasons.Wybe, "Flagged uncertain.");
   assert.equal(reasons.Cognite, "Declined membership.");
-  assert.match(reasons["(individual) Laksiya Balasubramaniam"], /Private individual/);
+  assert.equal(reasons["Laksiya Balasubramaniam"], undefined);
   assert.match(reasons["(unknown organisation)"], /unknown/i);
-  assert.equal(Object.keys(reasons).length, 5);
+  assert.equal(Object.keys(reasons).length, 4);
 });
 
 test("uncertain websites and unconfirmed logos are not published", () => {
@@ -52,4 +54,9 @@ test("uncertain websites and unconfirmed logos are not published", () => {
   assert.equal(byName.Dotspot.website, "https://dotspot.ai");
   assert.equal(byName["Oslo kommune, Sykehjemsetaten"].website, "https://www.oslo.kommune.no/");
   assert.equal(byName["Saro Robotics"].contactEmail, "ingeborg@sarorobotics.com");
+  assert.equal(byName["Laksiya Balasubramaniam"].membershipType, "individual");
+  assert.equal(byName["Kristoffer Gjerde"].membershipType, "individual");
+  assert.equal(byName["Laksiya Balasubramaniam"].affiliation, null);
+  assert.equal(byName["Kristoffer Gjerde"].affiliation, null);
+  assert.equal(byName.Cognite, undefined);
 });

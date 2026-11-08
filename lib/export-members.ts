@@ -2,7 +2,9 @@ import * as XLSX from "xlsx";
 import type { MemberRecord } from "@/lib/types";
 
 export const EXPORT_COLUMNS = [
+  "membership type",
   "company",
+  "affiliation",
   "website",
   "contact person",
   "email",
@@ -32,7 +34,9 @@ export function formatOsloDate(iso: string) {
 
 export function toExportRow(member: MemberRecord) {
   return {
+    "membership type": member.membershipType,
     company: member.companyName,
+    affiliation: member.affiliation ?? "",
     website: member.website ?? "",
     "contact person": member.contactPerson ?? "",
     email: member.contactEmail ?? "",

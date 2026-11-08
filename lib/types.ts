@@ -1,9 +1,13 @@
 export type MemberStatus = "approved" | "pending" | "rejected";
 
+export type MembershipType = "organisation" | "individual";
+
 export type MemberRecord = {
   id: string;
   slug: string;
+  membershipType: MembershipType;
   companyName: string;
+  affiliation: string | null;
   website: string | null;
   logoUrl: string | null;
   description: string;

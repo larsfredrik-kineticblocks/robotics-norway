@@ -102,7 +102,7 @@ async function AdminScreen({
             <div>
               <p className="font-heading text-lg text-navy">{member.companyName}</p>
               <p className="text-sm text-muted-foreground">
-                {member.status} · {member.contactPerson ?? "No contact"} · {member.contactEmail ?? "No email"}
+                {member.membershipType === "individual" ? "Individual" : "Organisation"} · {member.status} · {member.contactPerson ?? "No contact"} · {member.contactEmail ?? "No email"}
               </p>
             </div>
             {database ? (

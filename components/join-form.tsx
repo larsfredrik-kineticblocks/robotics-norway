@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { submitApplication } from "@/app/join/actions";
 import { idleState } from "@/lib/form-state";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import type { MembershipType } from "@/lib/types";
 
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
@@ -16,6 +17,8 @@ function FieldError({ message }: { message?: string }) {
 
 export function JoinForm() {
   const [state, action, pending] = useActionState(submitApplication, idleState);
+  const [membershipType, setMembershipType] = useState<MembershipType>("organisation");
+  const individual = membershipType === "individual";
 
   if (state.status === "success") {
     return (
@@ -33,46 +36,107 @@ export function JoinForm() {
           {state.message}
         </p>
       ) : null}
-      <div className="space-y-2">
-        <Label htmlFor="companyName">Company name</Label>
-        <Input id="companyName" name="companyName" required autoComplete="organization" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.companyName)} />
-        <FieldError message={state.fieldErrors.companyName} />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="website">Website</Label>
-        <Input id="website" name="website" type="url" required placeholder="https://" inputMode="url" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.website)} />
-        <FieldError message={state.fieldErrors.website} />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="logoUrl">Logo URL</Label>
-        <Input id="logoUrl" name="logoUrl" type="url" placeholder="https://" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.logo)} />
-        <Label htmlFor="logoFile" className="pt-2 text-muted-foreground">
-          Or upload a logo (PNG, JPEG, WebP, GIF or SVG, up to 150 KB)
-        </Label>
-        <Input id="logoFile" name="logoFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" className="h-11 md:text-base" />
-        <FieldError message={state.fieldErrors.logo} />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="description">Short description</Label>
-        <Textarea id="description" name="description" required minLength={20} maxLength={600} rows={5} className="min-h-32 md:text-base" aria-invalid={Boolean(state.fieldErrors.description)} />
-        <FieldError message={state.fieldErrors.description} />
-      </div>
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2">
-          <Label htmlFor="contactPerson">Contact person</Label>
-          <Input id="contactPerson" name="contactPerson" required autoComplete="name" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.contactPerson)} />
-          <FieldError message={state.fieldErrors.contactPerson} />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="contactEmail">Company email</Label>
-          <Input id="contactEmail" name="contactEmail" type="email" required autoComplete="email" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.contactEmail)} />
-          <FieldError message={state.fieldErrors.contactEmail} />
-        </div>
-      </div>
+      <fieldset className="space-y-3">
+        <legend className="font-heading text-sm tracking-wide text-navy">Membership</legend>
+        <label className="flex items-center gap-3 text-sm">
+          <input
+            type="radio"
+            name="membershipType"
+            value="organisation"
+            checked={!individual}
+            onChange={() => setMembershipType("organisation")}
+            className="size-4 accent-navy"
+          />
+          Company or organisation
+        </label>
+        <label className="flex items-center gap-3 text-sm">
+          <input
+            type="radio"
+            name="membershipType"
+            value="individual"
+            checked={individual}
+            onChange={() => setMembershipType("individual")}
+            className="size-4 accent-navy"
+          />
+          Individual
+        </label>
+      </fieldset>
+
+      {individual ? (
+        <>
+          <div className="space-y-2">
+            <Label htmlFor="fullName">Full name</Label>
+            <Input id="fullName" name="fullName" required autoComplete="name" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.fullName)} />
+            <FieldError message={state.fieldErrors.fullName} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="contactEmail">Email</Label>
+            <Input id="contactEmail" name="contactEmail" type="email" required autoComplete="email" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.contactEmail)} />
+            <FieldError message={state.fieldErrors.contactEmail} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="affiliation">Affiliation or title <span className="text-muted-foreground">(optional)</span></Label>
+            <Input id="affiliation" name="affiliation" autoComplete="organization" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.affiliation)} />
+            <FieldError message={state.fieldErrors.affiliation} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="website">LinkedIn or website <span className="text-muted-foreground">(optional)</span></Label>
+            <Input id="website" name="website" type="url" placeholder="https://" inputMode="url" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.website)} />
+            <FieldError message={state.fieldErrors.website} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="description">Short note on your interest</Label>
+            <Textarea id="description" name="description" required minLength={20} maxLength={600} rows={5} className="min-h-32 md:text-base" aria-invalid={Boolean(state.fieldErrors.description)} />
+            <FieldError message={state.fieldErrors.description} />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="space-y-2">
+            <Label htmlFor="companyName">Company name</Label>
+            <Input id="companyName" name="companyName" required autoComplete="organization" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.companyName)} />
+            <FieldError message={state.fieldErrors.companyName} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="website">Website</Label>
+            <Input id="website" name="website" type="url" required placeholder="https://" inputMode="url" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.website)} />
+            <FieldError message={state.fieldErrors.website} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="logoUrl">Logo URL</Label>
+            <Input id="logoUrl" name="logoUrl" type="url" placeholder="https://" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.logo)} />
+            <Label htmlFor="logoFile" className="pt-2 text-muted-foreground">
+              Or upload a logo (PNG, JPEG, WebP, GIF or SVG, up to 150 KB)
+            </Label>
+            <Input id="logoFile" name="logoFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" className="h-11 md:text-base" />
+            <FieldError message={state.fieldErrors.logo} />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="description">Short description</Label>
+            <Textarea id="description" name="description" required minLength={20} maxLength={600} rows={5} className="min-h-32 md:text-base" aria-invalid={Boolean(state.fieldErrors.description)} />
+            <FieldError message={state.fieldErrors.description} />
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="contactPerson">Contact person</Label>
+              <Input id="contactPerson" name="contactPerson" required autoComplete="name" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.contactPerson)} />
+              <FieldError message={state.fieldErrors.contactPerson} />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="contactEmail">Company email</Label>
+              <Input id="contactEmail" name="contactEmail" type="email" required autoComplete="email" className="h-11 md:text-base" aria-invalid={Boolean(state.fieldErrors.contactEmail)} />
+              <FieldError message={state.fieldErrors.contactEmail} />
+            </div>
+          </div>
+        </>
+      )}
+
       <div className="flex items-start gap-3">
         <Checkbox id="consent" name="consent" required aria-invalid={Boolean(state.fieldErrors.consent)} />
         <Label htmlFor="consent" className="items-start leading-6 font-normal">
-          I confirm that I am authorised to apply on behalf of this company, and that Robotics Norway may store these details and contact us about membership.
+          {individual
+            ? "I confirm that Robotics Norway may store these details and contact me about membership."
+            : "I confirm that I am authorised to apply on behalf of this company, and that Robotics Norway may store these details and contact us about membership."}
         </Label>
       </div>
       <FieldError message={state.fieldErrors.consent} />

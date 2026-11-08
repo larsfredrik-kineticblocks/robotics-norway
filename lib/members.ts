@@ -1,9 +1,11 @@
 import source from "@/data/members.source.json";
 import { slugify } from "@/lib/text";
-import type { MemberRecord } from "@/lib/types";
+import type { MemberRecord, MembershipType } from "@/lib/types";
 
 type SourceMember = {
   company_name: string;
+  membership_kind?: MembershipType;
+  affiliation?: string | null;
   website: string | null;
   website_certainty?: string;
   short_description: string | null;
@@ -32,17 +34,6 @@ const MISSING_DESCRIPTION = "A public description has not been confirmed yet.";
 export function classifyMember(member: SourceMember): MemberDecision {
   const companyName = member.company_name.trim();
   const status = member.membership_status ?? "";
-
-  if (
-    status === "individual_attendee" ||
-    companyName.toLowerCase().startsWith("(individual)")
-  ) {
-    return {
-      companyName,
-      include: false,
-      reason: "Private individual, not an organisation.",
-    };
-  }
 
   if (
     status === "calendar_guest_organisation_unknown" ||
@@ -145,12 +136,20 @@ function publishedContact(member: SourceMember) {
   };
 }
 
+function membershipTypeOf(member: SourceMember): MembershipType {
+  return member.membership_kind === "individual" ? "individual" : "organisation";
+}
+
 export function toPublicMember(member: SourceMember): MemberRecord {
   const contact = publishedContact(member);
+  const membershipType = membershipTypeOf(member);
+  const affiliation = member.affiliation?.trim() || null;
   return {
     id: slugify(member.company_name),
     slug: slugify(member.company_name),
+    membershipType,
     companyName: member.company_name,
+    affiliation: membershipType === "individual" ? affiliation : null,
     website: publishedWebsite(member),
     logoUrl: publishedLogo(member),
     description: publishedDescription(member),

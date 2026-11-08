@@ -28,23 +28,34 @@ export async function insertApplication(data: ApplicationInput): Promise<ActionS
   }
 
   const existing = await findMemberByCompanyName(data.companyName);
+  const nameField = data.membershipType === "individual" ? "fullName" : "companyName";
   if (existing?.status === "approved") {
     return {
       status: "error",
-      message: "This company is already a member.",
-      fieldErrors: { companyName: "This company is already a member." },
+      message: data.membershipType === "individual" ? "This person is already a member." : "This company is already a member.",
+      fieldErrors: { [nameField]: data.membershipType === "individual" ? "This person is already a member." : "This company is already a member." },
     };
   }
   if (existing?.status === "pending") {
     return {
       status: "error",
-      message: "An application for this company is already pending.",
-      fieldErrors: { companyName: "An application for this company is already pending." },
+      message:
+        data.membershipType === "individual"
+          ? "An application for this person is already pending."
+          : "An application for this company is already pending.",
+      fieldErrors: {
+        [nameField]:
+          data.membershipType === "individual"
+            ? "An application for this person is already pending."
+            : "An application for this company is already pending.",
+      },
     };
   }
 
   const values = {
+    membershipType: data.membershipType,
     companyName: data.companyName,
+    affiliation: data.affiliation,
     website: data.website,
     logoUrl: data.logoUrl,
     description: data.description,
@@ -69,7 +80,7 @@ export async function insertApplication(data: ApplicationInput): Promise<ActionS
   return {
     status: "success",
     message:
-      "Application received. It is stored as pending until an administrator approves it. The company will not appear on the public member list before then.",
+      "Application received. It is stored as pending until an administrator approves it. It will not appear on the public member list before then.",
     fieldErrors: {},
   };
 }
@@ -109,7 +120,9 @@ export async function saveMember(
   await db
     .update(members)
     .set({
+      membershipType: data.membershipType,
       companyName: data.companyName,
+      affiliation: data.affiliation,
       website: data.website,
       logoUrl: data.logoUrl,
       description: data.description,

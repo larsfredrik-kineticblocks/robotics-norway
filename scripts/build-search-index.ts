@@ -177,7 +177,14 @@ export function buildSearchCorpus(): SearchCorpus {
       title: member.companyName,
       meta: [member.contactPerson, member.contactEmail].filter(Boolean).join(" · "),
       href: `/members#${member.slug}`,
-      text: [member.companyName, member.description, member.contactPerson, member.contactEmail, member.website]
+      text: [
+        member.companyName,
+        member.membershipType === "individual" ? member.affiliation : null,
+        member.description,
+        member.membershipType === "individual" ? null : member.contactPerson,
+        member.membershipType === "individual" ? null : member.contactEmail,
+        member.website,
+      ]
         .filter(Boolean)
         .join(". "),
     })),

@@ -2,7 +2,9 @@ import { pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 
 export const members = pgTable("members", {
   id: serial("id").primaryKey(),
+  membershipType: text("membership_type").notNull().default("organisation"),
   companyName: text("company_name").notNull(),
+  affiliation: text("affiliation"),
   website: text("website"),
   logoUrl: text("logo_url"),
   description: text("description").notNull().default(""),
