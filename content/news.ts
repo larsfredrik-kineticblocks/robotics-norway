@@ -208,7 +208,7 @@ export const articles: NewsArticle[] = [
         "Open membership. The network is open to companies and organisations in robotics and physical AI, and to individuals as private members.",
       ),
       paragraph(
-        "Run by its members. Members elect the steering group, set the fees and take turns as administrator, one year at a time.",
+        "Run by its members. Members elect the steering group and take turns as administrator, one year at a time.",
       ),
       paragraph(
         "Five hundred robot labs. The charter calls for labs in Norwegian cities where members test, collect data and demonstrate, starting at StartupLab. The heading on the slide is 500 robot labs.",
@@ -259,7 +259,7 @@ export const articles: NewsArticle[] = [
         ],
       },
       paragraph(
-        "Taken together, the points describe a network run by its members. They elect the steering group, set the fees and take turns as administrator, one year at a time. They share a route to buyers, partners, talent and investors in Norway and abroad. Market information shared among them stays confidential, and each member runs its own business freely. The practical work named in the charter is robot labs in Norwegian cities, starting at StartupLab, joint study trips to Odense, San Francisco and Shenzhen, and a funded Bay Area project led by Innovation Norway. The same six headings are published on the front page of this site.",
+        "Taken together, the points describe a network run by its members. They elect the steering group and take turns as administrator, one year at a time. They share a route to buyers, partners, talent and investors in Norway and abroad. Market information shared among them stays confidential, and each member runs its own business freely. The practical work named in the charter is robot labs in Norwegian cities, starting at StartupLab, joint study trips to Odense, San Francisco and Shenzhen, and a funded Bay Area project led by Innovation Norway. The same six headings are published on the front page of this site.",
       ),
       heading("What the meeting agreed"),
       paragraph(

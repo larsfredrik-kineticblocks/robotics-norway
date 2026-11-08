@@ -21,7 +21,7 @@ Robotics Norway is the network/cluster for Norwegian companies that build robots
 Open to robotics companies and organisations in Norway, and to individuals who live in Norway or work for a Norwegian robotics company or in academia.
 
 ### Run by its members
-Members elect the steering group, set the fees and take turns as administrator, one year at a time.
+Members elect the steering group and take turns as administrator, one year at a time.
 
 ### 500 robot labs
 Five (hundred) labs in Norwegian cities where members test, collect data and demonstrate, starting at Startuplab.

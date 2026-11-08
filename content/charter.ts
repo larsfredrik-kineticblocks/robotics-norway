@@ -22,7 +22,7 @@ export const charter = {
     {
       slug: "run-by-its-members",
       title: "Run by its members",
-      body: "Members elect the steering group, set the fees and take turns as administrator, one year at a time.",
+      body: "Members elect the steering group and take turns as administrator, one year at a time.",
     },
     {
       slug: "robot-labs",
