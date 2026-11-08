@@ -17,7 +17,7 @@ export const charter = {
     {
       slug: "open-membership",
       title: "Open membership",
-      body: "Open to companies and organisations in robotics and physical AI, and to individuals as private members.",
+      body: "Open to robotics companies and organisations in Norway, and to individuals who live in Norway or work for a Norwegian robotics company or in academia.",
     },
     {
       slug: "run-by-its-members",

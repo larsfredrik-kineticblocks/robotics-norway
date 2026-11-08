@@ -18,7 +18,7 @@ From the founding meeting slides, 5 November 2026, Startuplab, Oslo. Slide title
 Robotics Norway is the network/cluster for Norwegian companies that build robots, physical AI and the data and software around them, and gives its members a shared route to buyers, partners, talent and investors at home and abroad.
 
 ### Open membership
-Open to companies and organisations in robotics and physical AI, and to individuals as private members.
+Open to robotics companies and organisations in Norway, and to individuals who live in Norway or work for a Norwegian robotics company or in academia.
 
 ### Run by its members
 Members elect the steering group, set the fees and take turns as administrator, one year at a time.
@@ -39,7 +39,7 @@ Notes from the same deck (not part of the six charter bullets, but presented as 
 - Signing a letter of intent establishes the project for Innovation Norway; the binding cooperation agreement, including any cash contribution, comes later.
 - Kinetic Blocks AS is proposed as rotating administrator for 2027.
 - Company presentations and de minimis declarations are requested by 20 November 2026.
-- Steering group confirmed at the meeting (Granola notes): Daniel (Saro Robotics), Eva (Necia), Christian Rokseth. Others invited to join by email. The steering group was to land the charter and coordinate with existing clusters.
+- Steering group confirmed at the meeting (Granola notes): Daniel (Saro Robotics), Eva (Necia), Christian Rokseth (Humanoid.guide) and Runway FBU. Others invited to join by email. The steering group was to land the charter and coordinate with existing clusters.
 
 ---
 
