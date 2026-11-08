@@ -32,7 +32,7 @@ export function SearchScreen() {
           name="q"
           key={query}
           defaultValue={query}
-          placeholder="Charter, documents, members"
+          placeholder="Charter, news, documents, members"
           className="h-12 w-full rounded-lg border border-input px-4 text-base outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
         />
         <button
@@ -45,7 +45,7 @@ export function SearchScreen() {
 
       {!query ? (
         <p className="mt-10 max-w-xl text-muted-foreground">
-          Search the public charter, document titles and text, and member companies.
+          Search the public charter, news, document titles and text, and member companies.
         </p>
       ) : (
         <div className="mt-10">

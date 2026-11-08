@@ -34,7 +34,7 @@ export function SearchBox({ defaultQuery = "", welcome = false, id = "q" }: Sear
             name="q"
             key={defaultQuery}
             defaultValue={defaultQuery}
-            placeholder="Charter, documents, members"
+            placeholder="Charter, news, documents, members"
             className="h-12 px-4 text-base md:text-base"
           />
           <Button type="submit" className="h-12 px-6">

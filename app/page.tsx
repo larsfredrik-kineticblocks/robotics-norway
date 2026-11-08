@@ -1,11 +1,14 @@
 import Link from "next/link";
+import { NewsPhoto } from "@/components/news-photo";
 import { SearchBox } from "@/components/search-box";
 import { networkSummary, charter } from "@/content/charter";
+import { articlesByDate, formatNewsDate } from "@/content/news";
 import corpus from "@/data/search-corpus.json";
 import { formatOsloDate } from "@/lib/export-members";
 import type { SearchCorpus } from "@/lib/types";
 
 const data = corpus as SearchCorpus;
+const latestNews = articlesByDate()[0];
 
 export default function HomePage() {
   return (
@@ -33,6 +36,37 @@ export default function HomePage() {
           <SearchBox welcome />
         </div>
       </section>
+
+      {latestNews ? (
+        <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="latest-news-heading">
+          <p className="font-heading text-sm tracking-[0.14em] text-flag uppercase">News</p>
+          <h2 id="latest-news-heading" className="mt-3 font-heading text-4xl text-navy">
+            Latest news
+          </h2>
+          <article className="mt-8 grid border border-border sm:grid-cols-[18rem_1fr]">
+            <Link href={`/news/${latestNews.slug}`} className="block bg-paper">
+              <NewsPhoto figure={latestNews.hero} sizes="(min-width: 640px) 18rem, 100vw" />
+            </Link>
+            <div className="flex flex-col justify-center p-6 sm:p-8">
+              <time dateTime={latestNews.date} className="text-sm text-muted-foreground">
+                {formatNewsDate(latestNews.date)}
+              </time>
+              <h3 className="mt-2 font-heading text-2xl text-navy">
+                <Link href={`/news/${latestNews.slug}`} className="hover:underline">
+                  {latestNews.title}
+                </Link>
+              </h3>
+              <p className="mt-3 max-w-xl leading-7">{latestNews.excerpt}</p>
+              <Link
+                href={`/news/${latestNews.slug}`}
+                className="mt-4 inline-block font-heading text-sm tracking-wide text-navy hover:underline"
+              >
+                Read the article
+              </Link>
+            </div>
+          </article>
+        </section>
+      ) : null}
 
       <section id="charter" className="mx-auto max-w-6xl scroll-mt-28 px-5 py-20">
         <p className="font-heading text-sm tracking-[0.14em] text-flag uppercase">Charter</p>

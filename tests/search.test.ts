@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import corpus from "../data/search-corpus.json";
 import { charter } from "../content/charter";
+import { articleBodyWordCount, getArticle } from "../content/news";
 import { groupHits, searchDocuments } from "../lib/search";
 import type { SearchCorpus } from "../lib/types";
 
@@ -26,4 +27,18 @@ test("search finds charter, documents and members", () => {
   assert.equal(saro[0]?.title, "Saro Robotics");
   assert.equal(saro[0]?.group, "Members");
   assert.equal(groupHits(saro)[0]?.group, "Members");
+});
+
+test("search finds the founding news article", () => {
+  const article = getArticle("robotics-norway-is-founded");
+  assert.ok(article);
+  const words = articleBodyWordCount(article);
+  assert.ok(words >= 400 && words <= 600, `expected 400–600 words, got ${words}`);
+
+  const hits = searchDocuments(data.searchDocuments, "founding meeting StartupLab");
+  const news = hits.find((hit) => hit.href === "/news/robotics-norway-is-founded");
+  assert.ok(news);
+  assert.equal(news.group, "News");
+  assert.equal(news.title, "Robotics Norway is founded");
+  assert.equal(groupHits([news])[0]?.group, "News");
 });

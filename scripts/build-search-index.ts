@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { charter } from "../content/charter";
+import { articlePlainText, articles, formatNewsDate } from "../content/news";
 import { publicMembers } from "../lib/members";
 import type { CorpusDocument, SearchCorpus, SearchDocument } from "../lib/types";
 
@@ -144,6 +145,14 @@ export function buildSearchCorpus(): SearchCorpus {
       meta: "Public charter",
       href: `/#${point.slug}`,
       text: `${point.title}. ${point.body}`,
+    })),
+    ...articles.map((article) => ({
+      id: `news-${article.slug}`,
+      group: "News" as const,
+      title: article.title,
+      meta: formatNewsDate(article.date),
+      href: `/news/${article.slug}`,
+      text: articlePlainText(article),
     })),
     ...documents.map((document) => ({
       id: `document-${document.slug}`,
