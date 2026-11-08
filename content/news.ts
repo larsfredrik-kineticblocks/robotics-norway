@@ -15,7 +15,9 @@ export type TextRun = {
 
 export type NewsBlock =
   | { type: "paragraph"; runs: TextRun[] }
-  | { type: "gallery"; figures: NewsFigure[]; credit: string };
+  | { type: "heading"; text: string }
+  | { type: "figure"; figure: NewsFigure; credit?: string }
+  | { type: "gallery"; figures: NewsFigure[]; credit: string; frame?: boolean };
 
 export type NewsArticle = {
   slug: string;
@@ -28,6 +30,8 @@ export type NewsArticle = {
   order: number;
   /** Short labels such as Network or Events. */
   tags?: string[];
+  /** Place shown after the date. Defaults to StartupLab, Oslo. */
+  place?: string;
   excerpt: string;
   hero: NewsFigure;
   /** Credit for the photographs in the article. */
@@ -47,7 +51,141 @@ function paragraph(text: string): NewsBlock {
   return { type: "paragraph", runs: [{ text }] };
 }
 
+function heading(text: string): NewsBlock {
+  return { type: "heading", text };
+}
+
+function photo(file: string, width: number, height: number, text: string): NewsFigure {
+  return { src: file, alt: text, caption: text, width, height };
+}
+
+const startuplabCredit = "Photos: Startuplab";
+
 export const articles: NewsArticle[] = [
+  {
+    slug: "humanoids-at-work",
+    title: "Humanoids at work: Startuplab and IMD Alumni Club of Norway bring physical AI to Norwegian business",
+    date: "2026-11-05",
+    order: 2,
+    tags: ["Events"],
+    place: "Startuplab, Oslo",
+    excerpt:
+      "Startuplab and IMD Alumni Club of Norway gathered business leaders, startups and robots to explore what humanoids can do at work.",
+    hero: photo(
+      "/news/humanoids-1.jpg",
+      1600,
+      966,
+      "Marie Mostad, CEO of Startuplab, opens Humanoids at work in front of a full house.",
+    ),
+    photoCredit: startuplabCredit,
+    blocks: [
+      paragraph(
+        "The 1990s gave us the PC, the 2000s the internet, then came the smartphone, and now AI. Will humanoids shape the 2030s and beyond?",
+      ),
+      paragraph(
+        "On 5 November, Startuplab and the IMD Alumni Club of Norway hosted \"Humanoids at work\" for Startuplab's Corporate Innovation Network. The aim was to lower the threshold, take the edge off what can feel intimidating, and get people thinking about testing and using robots in their own businesses. The event brought together large companies, startups and scale-ups. Marie Mostad, CEO of Startuplab, opened the afternoon.",
+      ),
+      heading("The money is moving in"),
+      paragraph(
+        "Capital is pouring into the field. More funding has already been raised for humanoid robotics in 2026 than in 2024 and 2025 combined. According to Christian Rokseth, founder of Humanoid.guide, a new humanoid is launched roughly every day. Even so, most of the activity is still about research and showing up at events. But that is how every new technology starts.",
+      ),
+      {
+        type: "gallery",
+        frame: false,
+        credit: startuplabCredit,
+        figures: [
+          photo(
+            "/news/humanoids-2.jpg",
+            1600,
+            1096,
+            "Lars-Fredrik Forberg, IMD Alumni Club and Kinetic Blocks, presents the charter for Robotics Norway.",
+          ),
+          photo(
+            "/news/humanoids-3.jpg",
+            1600,
+            1040,
+            "Christian Rokseth, Humanoid.guide, on the humanoid makers to know in China, the USA and Europe.",
+          ),
+        ],
+      },
+      heading("From observing to doing"),
+      paragraph(
+        "Robotics is not new, and the industry is well under way. As Sigrid Kjønnø Schaanning of Cognite showed, robots are moving from observing, for example on inspection rounds on oil platforms, to carrying out tasks that until now have been reserved for people. Fine motor skills, the fingertip feel humans train from infancy, are being practised hard, and progress is fast.",
+      ),
+      {
+        type: "figure",
+        credit: startuplabCredit,
+        figure: photo(
+          "/news/humanoids-4.jpg",
+          1600,
+          1028,
+          "Sigrid Kjønnø Schaanning, Cognite, on robotics and autonomous industry.",
+        ),
+      },
+      heading("Will we be replaced?"),
+      paragraph(
+        "In the panel, moderated by Christina Wiig of Startuplab, Marcus Horn (Dotspot) and Lone Werness Bekkeheien (Marselia Robotics) pointed out that many people in the field look forward to getting rid of boring tasks, and believe it will free up time for more important work. As with generative AI, the key is to let employees decide and become the experts on what should be automated, and how. Mandate, budget and ownership belong in the line organisation. In other words: good change management.",
+      ),
+      paragraph(
+        "This matters to all of us. Half of the world economy is physical work, and sectors such as health, hospitality and mobility need more hands. Imagine a humanoid that cleans and tidies, so home care workers have time to sit down with the elderly. \"People will now get more time for people,\" said Julian Alexander Hahn of Wybe.",
+      ),
+      {
+        type: "figure",
+        credit: startuplabCredit,
+        figure: photo(
+          "/news/humanoids-5.jpg",
+          1600,
+          1096,
+          "From left: Sigrid Kjønnø Schaanning (Cognite), Marcus Horn (Dotspot), Lone Werness Bekkeheien (Marselia Robotics), Christian Rokseth (Humanoid.guide) and moderator Christina Wiig (Startuplab).",
+        ),
+      },
+      heading("A late visitor from Moss"),
+      paragraph(
+        "Julian Alexander Hahn, founder of Wybe Robotics in Moss, arrived at the very end with a humanoid in tow. Wybe builds what it calls robotic employees. It starts as software on a small on-premises device, the Wybe Node, which handles calls, emails, scheduling and follow-ups around the clock in more than 30 languages. When a role needs hands, the same \"brain\" can be given a humanoid body for cleaning, reception or security. Wybe buys the robot bodies from hardware partners and installs its own software, safety systems and intelligence at its R&D lab in Moss. Consumers can now reserve a Wybe for the home, guided at first through VR teleoperation, with deliveries to Norwegian homes planned before the new year.",
+      ),
+      {
+        type: "gallery",
+        frame: false,
+        credit: startuplabCredit,
+        figures: [
+          photo(
+            "/news/humanoids-8.jpg",
+            1600,
+            1066,
+            "Julian Alexander Hahn of Wybe Robotics (right) presents the Wybe, steered by a colleague wearing a VR headset.",
+          ),
+          photo(
+            "/news/humanoids-7.jpg",
+            1600,
+            1146,
+            "A member of the Wybe team tries VR teleoperation of the humanoid.",
+          ),
+        ],
+      },
+      heading("Missed this time: Per Ivar Selvaag"),
+      paragraph(
+        "Per Ivar Selvaag, former VP of Design at 1X Technologies, where he led the design of the NEO home humanoid, and a lead designer at BMW before that, was due to speak but was ill on the day. His planned talk argued that the uncanny valley is a business problem, not an aesthetic one: whether people accept a humanoid in their home or workplace comes down to design. We hope to hear him at a later event.",
+      ),
+      heading("What should you do?"),
+      paragraph(
+        "Those who start early gain a big advantage when the technology matures. Do you have tasks that are physical, repetitive, boring or unsafe? Map them. Collect data. Test. Robot Garden at Fornebu is a physical test arena for industry, and digital simulations take you a long way. Lars-Fredrik Forberg, who also presented the Robotics Norway network and its charter at the event, is building Kinetic Blocks, a marketplace for robot training data.",
+      ),
+      paragraph(
+        "And at home? Many are waiting for their Neo from 1X, and you can now also rent one through Wybe in time for Christmas. Perhaps 2026 is the last year you sort your own laundry.",
+      ),
+      paragraph(
+        "Bettina Lycke of Startuplab closed the afternoon, and the conversation continued over mingling with humans and humanoids alike.",
+      ),
+      {
+        type: "figure",
+        credit: startuplabCredit,
+        figure: photo("/news/humanoids-6.jpg", 1600, 926, "Guests meet the humanoid after the talks."),
+      },
+      paragraph(
+        "Thanks to everyone who took part, and especially to Christian Rokseth (Humanoid.guide), Sigrid Kjønnø Schaanning (Cognite), Lars-Fredrik Forberg (Kinetic Blocks), Marcus Horn (Dotspot), Lone Werness Bekkeheien (Marselia Robotics), Julian Alexander Hahn (Wybe Robotics), and the driving force Christina Wiig (Startuplab).",
+      ),
+    ],
+  },
   {
     slug: "robotics-norway-is-founded",
     title: "Robotics Norway is founded",
@@ -186,6 +324,11 @@ export function articlePlainText(article: NewsArticle) {
   for (const block of article.blocks) {
     if (block.type === "paragraph") {
       parts.push(block.runs.map((run) => run.text).join(""));
+    } else if (block.type === "heading") {
+      parts.push(block.text);
+    } else if (block.type === "figure") {
+      parts.push(block.figure.caption);
+      if (block.credit) parts.push(block.credit);
     } else {
       parts.push(...block.figures.map((figure) => figure.caption));
       parts.push(block.credit);

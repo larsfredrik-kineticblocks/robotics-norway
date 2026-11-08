@@ -69,7 +69,7 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
       <h1 className="mt-3 font-heading text-4xl text-navy sm:text-5xl">{article.title}</h1>
       <p className="mt-4 text-sm text-muted-foreground">
         <time dateTime={article.date}>{formatNewsDate(article.date)}</time>
-        {" · StartupLab, Oslo"}
+        {` · ${article.place ?? "StartupLab, Oslo"}`}
       </p>
       <figure className="mt-8">
         <NewsPhoto figure={article.hero} preload sizes="(min-width: 48rem) 48rem, 100vw" />
@@ -87,12 +87,35 @@ export default async function NewsArticlePage({ params }: { params: Promise<{ sl
               </p>
             );
           }
+          if (block.type === "heading") {
+            return (
+              <h2 key={index} className="pt-6 font-heading text-2xl text-navy">
+                {block.text}
+              </h2>
+            );
+          }
+          if (block.type === "figure") {
+            return (
+              <figure key={index} className="my-8">
+                <NewsPhoto figure={block.figure} sizes="(min-width: 48rem) 48rem, 100vw" />
+                <figcaption className="mt-2 text-sm leading-6 text-muted-foreground">
+                  <p>{block.figure.caption}</p>
+                  {block.credit ? <p className="mt-1">{block.credit}</p> : null}
+                </figcaption>
+              </figure>
+            );
+          }
+          const paired = block.figures.length > 1;
           return (
             <figure key={index} className="my-10">
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className={paired ? "grid gap-6 sm:grid-cols-2" : "grid gap-6"}>
                 {block.figures.map((figure) => (
                   <figure key={figure.src}>
-                    <NewsPhoto figure={figure} frame sizes="(min-width: 40rem) 22rem, 100vw" />
+                    <NewsPhoto
+                      figure={figure}
+                      frame={block.frame !== false}
+                      sizes={paired ? "(min-width: 40rem) 22rem, 100vw" : "(min-width: 48rem) 48rem, 100vw"}
+                    />
                     <figcaption className="mt-2 text-sm leading-6 text-muted-foreground">{figure.caption}</figcaption>
                   </figure>
                 ))}
