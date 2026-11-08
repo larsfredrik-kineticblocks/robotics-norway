@@ -75,11 +75,9 @@ Export from `/admin` (CSV and XLSX) requires a signed-in administrator and `DATA
 
 `data/documents.json` is the bundled index of the four files in the shared Drive. The folder itself is members-only: [https://drive.google.com/drive/folders/0AOC8ZRNR_c8xUk9PVA](https://drive.google.com/drive/folders/0AOC8ZRNR_c8xUk9PVA). Each file link is shared as anyone-with-the-link can view.
 
-`npm run content` rebuilds `data/search-corpus.json` from the charter, the English translations in `content/legal/`, and the public member list. The site searches that corpus in the browser with MiniSearch. Groups are Charter, Documents and Members.
+`npm run content` rebuilds `data/search-corpus.json` from the charter, the documents in `content/legal/`, and the public member list. The site searches that corpus in the browser with MiniSearch. Groups are Charter, News, Documents and Members.
 
 `npm run drive:sync` refreshes the index when both Drive environment variables are set. It lists the folder with the Google Drive API, exports Google Docs and Slides to text, and regenerates the corpus. Without credentials it exits successfully and leaves the bundled index unchanged.
-
-English texts of the Norwegian legal drafts are marked as translations, not signed originals.
 
 ## Deploy on Vercel
 

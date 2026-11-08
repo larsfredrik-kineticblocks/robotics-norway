@@ -6,6 +6,7 @@ type Block =
   | { type: "h1" | "h2" | "h3"; text: string }
   | { type: "p"; text: string }
   | { type: "ul"; items: string[] }
+  | { type: "ol"; items: string[] }
   | { type: "hr" };
 
 function parse(source: string): Block[] {
@@ -13,6 +14,7 @@ function parse(source: string): Block[] {
   const blocks: Block[] = [];
   let paragraph: string[] = [];
   let list: string[] = [];
+  let listKind: "ul" | "ol" = "ul";
 
   const flushParagraph = () => {
     if (paragraph.length === 0) return;
@@ -21,8 +23,9 @@ function parse(source: string): Block[] {
   };
   const flushList = () => {
     if (list.length === 0) return;
-    blocks.push({ type: "ul", items: list });
+    blocks.push(listKind === "ol" ? { type: "ol", items: list } : { type: "ul", items: list });
     list = [];
+    listKind = "ul";
   };
 
   for (const line of lines) {
@@ -57,8 +60,18 @@ function parse(source: string): Block[] {
       continue;
     }
     if (trimmed.startsWith("- ")) {
+      if (list.length > 0 && listKind !== "ul") flushList();
       flushParagraph();
+      listKind = "ul";
       list.push(trimmed.slice(2));
+      continue;
+    }
+    const ordered = /^(\d+)\.\s+(.*)$/.exec(trimmed);
+    if (ordered) {
+      if (list.length > 0 && listKind !== "ol") flushList();
+      flushParagraph();
+      listKind = "ol";
+      list.push(ordered[2]);
       continue;
     }
     flushList();
@@ -107,13 +120,17 @@ export function Markdown({ source }: MarkdownProps) {
             </h4>
           );
         }
-        if (block.type === "ul") {
+        if (block.type === "ul" || block.type === "ol") {
+          const ListTag = block.type === "ol" ? "ol" : "ul";
           return (
-            <ul key={index} className="list-disc space-y-2 pl-5">
+            <ListTag
+              key={index}
+              className={block.type === "ol" ? "list-decimal space-y-2 pl-5" : "list-disc space-y-2 pl-5"}
+            >
               {block.items.map((item) => (
                 <li key={item}>{inline(item)}</li>
               ))}
-            </ul>
+            </ListTag>
           );
         }
         if (block.type === "hr") return <hr key={index} className="border-border" />;

@@ -17,8 +17,8 @@ test("search finds charter, documents and members", () => {
   const confidential = searchDocuments(data.searchDocuments, "confidential");
   assert.ok(confidential.some((hit) => hit.group === "Charter" && hit.title === "Trust between members"));
 
-  const letter = searchDocuments(data.searchDocuments, "Intensjonsavtale");
-  assert.ok(letter.some((hit) => hit.href === "/documents/intensjonsavtale"));
+  const charterDoc = searchDocuments(data.searchDocuments, "Membership is free");
+  assert.ok(charterDoc.some((hit) => hit.href === "/documents/charter"));
 
   const english = searchDocuments(data.searchDocuments, "de minimis");
   assert.ok(english.some((hit) => hit.group === "Documents"));

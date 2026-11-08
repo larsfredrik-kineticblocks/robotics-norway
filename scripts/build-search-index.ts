@@ -27,9 +27,6 @@ type DocumentsFile = {
   documents: DocumentMeta[];
 };
 
-const translationNotice =
-  "This is an English translation, not a signed original. The source-language document is the Norwegian draft.";
-
 function read(relative: string) {
   return readFileSync(path.join(root, relative), "utf8");
 }
@@ -63,62 +60,29 @@ function extractedOverride(slug: string) {
 export function buildSearchCorpus(): SearchCorpus {
   const documentsFile = JSON.parse(read("data/documents.json")) as DocumentsFile;
   const charterMd = read("content/legal/charter.md");
-  const charterEn = read("content/legal/charter.en.md");
-  const sectionA = section(
-    charterMd,
-    "## A. Public charter (English original)",
-    "## B. Intensjonsavtale",
-  );
-  const sectionB = section(
-    charterMd,
-    "## B. Intensjonsavtale om etablering av bedriftsnettverket Robotics Norway",
-    "## C. Samarbeidsavtale",
-  );
-  const sectionC = section(
-    charterMd,
-    "## C. Samarbeidsavtale for bedriftsnettverket Robotics Norway",
-  );
-  const letter = section(
-    charterEn,
-    "## Letter of intent on establishing the Robotics Norway business network",
-    "## Cooperation agreement",
-  );
-  const cooperation = section(
-    charterEn,
-    "## Cooperation agreement for the Robotics Norway business network",
-  );
+  const sectionA = section(charterMd, "## A. Public charter (English original)");
   const invitation = read("content/legal/invitation.md").trim();
+  const charterCurrent = read("content/legal/charter-current.md").trim();
 
   const extracts: Record<string, string> = {
     "section-a": sectionA,
-    "section-b": sectionB,
-    "section-c": sectionC,
+    "charter-current": charterCurrent,
     invitation,
-  };
-  const translations: Record<string, { title: string; text: string }> = {
-    "letter-of-intent": {
-      title: "Letter of intent on establishing the Robotics Norway business network",
-      text: letter,
-    },
-    "cooperation-agreement": {
-      title: "Cooperation agreement for the Robotics Norway business network",
-      text: cooperation,
-    },
   };
 
   const documents: CorpusDocument[] = documentsFile.documents.map((document) => {
     const summary = document.summary?.trim() || null;
     let text: string;
-    if (summary) {
-      text = summary;
-    } else {
-      if (!document.extract) throw new Error(`Missing extract for ${document.slug}`);
+    if (document.extract) {
       const bundled = extracts[document.extract];
       if (!bundled) throw new Error(`Unknown extract '${document.extract}' for ${document.slug}`);
       text = extractedOverride(document.slug) ?? bundled;
+    } else if (summary) {
+      text = summary;
+    } else {
+      throw new Error(`Missing extract for ${document.slug}`);
     }
-    const translation = document.translation ? translations[document.translation] : null;
-    if (document.translation && !translation) {
+    if (document.translation) {
       throw new Error(`Unknown translation '${document.translation}'`);
     }
     return {
@@ -132,9 +96,7 @@ export function buildSearchCorpus(): SearchCorpus {
       publicAnyoneWithLink: document.publicAnyoneWithLink,
       summary,
       text,
-      translation: translation
-        ? { title: translation.title, notice: translationNotice, text: translation.text }
-        : null,
+      translation: null,
     };
   });
 
@@ -169,7 +131,9 @@ export function buildSearchCorpus(): SearchCorpus {
       title: document.name,
       meta: [document.type, document.translation?.title].filter(Boolean).join(" · "),
       href: `/documents/${document.slug}`,
-      text: [document.text, document.translation?.text].filter(Boolean).join("\n\n"),
+      text: [document.summary !== document.text ? document.summary : null, document.text]
+        .filter(Boolean)
+        .join("\n\n"),
     })),
     ...publicMembers().map((member) => ({
       id: `member-${member.slug}`,

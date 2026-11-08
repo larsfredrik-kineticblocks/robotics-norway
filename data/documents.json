@@ -8,6 +8,19 @@
   },
   "documents": [
     {
+      "slug": "charter",
+      "name": "Charter for Robotics Norway",
+      "type": "Google Doc",
+      "mimeType": "application/vnd.google-apps.document",
+      "id": "1ejnl2yFr0TvhdGaMvXPAPXE8QvHlf5ZUFa80K9HsLGY",
+      "link": "https://docs.google.com/document/d/1ejnl2yFr0TvhdGaMvXPAPXE8QvHlf5ZUFa80K9HsLGY/edit",
+      "lastModified": "2026-11-08T12:00:00.000Z",
+      "publicAnyoneWithLink": true,
+      "extract": "charter-current",
+      "summary": "The charter for Robotics Norway: a free network with no budget, open to robotics companies in Norway and to individuals, run by a volunteer steering group with rotating leadership and administration.",
+      "translation": null
+    },
+    {
       "slug": "steering-group-notice",
       "name": "Notice and agenda – Robotics Norway steering group meeting",
       "type": "Google Doc",
@@ -19,18 +32,6 @@
       "extract": null,
       "summary": "Notice and agenda for the first steering group meeting: approval of the charter, the website, and two proposed projects, A door to the Bay Area and A door to China. Date to be set.",
       "translation": null
-    },
-    {
-      "slug": "intensjonsavtale",
-      "name": "Intensjonsavtale Robotics Norway",
-      "type": "Google Doc",
-      "mimeType": "application/vnd.google-apps.document",
-      "id": "13edIpxXYAicyGpaptHVGgfsiBHZ23Mt3M74Xy0Os4Yg",
-      "link": "https://docs.google.com/document/d/13edIpxXYAicyGpaptHVGgfsiBHZ23Mt3M74Xy0Os4Yg/edit?usp=drivesdk",
-      "lastModified": "2026-10-28T10:19:49.597Z",
-      "publicAnyoneWithLink": true,
-      "extract": "section-b",
-      "translation": "letter-of-intent"
     },
     {
       "slug": "invitation",
@@ -68,18 +69,6 @@
       "extract": null,
       "summary": "Minutes from the founding meeting at Startuplab on 5 November 2026: member introductions, existing initiatives, the Bay Area project, robot labs, the steering group and next steps.",
       "translation": null
-    },
-    {
-      "slug": "samarbeidsavtale",
-      "name": "Utkast samarbeidsavtale Robotics Norway",
-      "type": "Google Doc",
-      "mimeType": "application/vnd.google-apps.document",
-      "id": "1hGT3heVoCOeokTcDykF4dlyZC_anpsFa69YjYqOnCBo",
-      "link": "https://docs.google.com/document/d/1hGT3heVoCOeokTcDykF4dlyZC_anpsFa69YjYqOnCBo/edit?usp=drivesdk",
-      "lastModified": "2026-10-28T10:19:58.814Z",
-      "publicAnyoneWithLink": true,
-      "extract": "section-c",
-      "translation": "cooperation-agreement"
     }
   ]
 }
