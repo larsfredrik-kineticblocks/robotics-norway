@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import corpus from "../data/search-corpus.json";
 import { charter } from "../content/charter";
-import { articleBodyWordCount, getArticle } from "../content/news";
+import { articleBodyWordCount, compareArticles, getArticle } from "../content/news";
 import { groupHits, searchDocuments } from "../lib/search";
 import type { SearchCorpus } from "../lib/types";
 
@@ -27,6 +27,19 @@ test("search finds charter, documents and members", () => {
   assert.equal(saro[0]?.title, "Saro Robotics");
   assert.equal(saro[0]?.group, "Members");
   assert.equal(groupHits(saro)[0]?.group, "Members");
+});
+
+test("news sorts newest first and breaks date ties by order", () => {
+  const sorted = [
+    { date: "2026-11-05", order: 1 },
+    { date: "2026-11-05", order: 3 },
+    { date: "2026-11-06", order: 0 },
+    { date: "2026-10-01", order: 9 },
+  ].sort(compareArticles);
+  assert.deepEqual(
+    sorted.map((article) => `${article.date}:${article.order}`),
+    ["2026-11-06:0", "2026-11-05:3", "2026-11-05:1", "2026-10-01:9"],
+  );
 });
 
 test("search finds the founding news article", () => {

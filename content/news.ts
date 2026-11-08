@@ -22,6 +22,12 @@ export type NewsArticle = {
   title: string;
   /** Calendar date, YYYY-MM-DD. */
   date: string;
+  /**
+   * Tie-break when two articles share a date. Higher numbers are listed first.
+   */
+  order: number;
+  /** Short labels such as Network or Events. */
+  tags?: string[];
   excerpt: string;
   hero: NewsFigure;
   /** Credit for the photographs in the article. */
@@ -46,6 +52,8 @@ export const articles: NewsArticle[] = [
     slug: "robotics-norway-is-founded",
     title: "Robotics Norway is founded",
     date: "2026-11-05",
+    order: 1,
+    tags: ["Network"],
     excerpt:
       "Participants met in person and online at StartupLab in Oslo on 5 November 2026 for the founding meeting of the Robotics Norway network.",
     hero,
@@ -150,8 +158,14 @@ export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug) ?? null;
 }
 
+export function compareArticles(a: Pick<NewsArticle, "date" | "order">, b: Pick<NewsArticle, "date" | "order">) {
+  const byDate = b.date.localeCompare(a.date);
+  if (byDate !== 0) return byDate;
+  return (b.order ?? 0) - (a.order ?? 0);
+}
+
 export function articlesByDate() {
-  return [...articles].sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+  return [...articles].sort(compareArticles);
 }
 
 export function formatNewsDate(isoDate: string) {
@@ -166,7 +180,9 @@ export function formatNewsDate(isoDate: string) {
 }
 
 export function articlePlainText(article: NewsArticle) {
-  const parts = [article.excerpt, article.hero.caption, article.photoCredit];
+  const parts = [article.excerpt, article.tags?.join(", "), article.hero.caption, article.photoCredit].filter(
+    (part): part is string => Boolean(part),
+  );
   for (const block of article.blocks) {
     if (block.type === "paragraph") {
       parts.push(block.runs.map((run) => run.text).join(""));
